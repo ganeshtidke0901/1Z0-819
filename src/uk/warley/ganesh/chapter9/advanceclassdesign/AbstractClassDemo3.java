@@ -25,5 +25,8 @@ abstract class Class6 extends Class5 {
 //	
 //}
 
-public class AbstractClassDemo3 {
+public abstract class AbstractClassDemo3 {
+	
+//	public  abstract static void justTest();//abstract and static does not work for method 
+
 }
