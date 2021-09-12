@@ -3,6 +3,7 @@ package uk.warley.ganesh.chapter14.genericandcollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class FactoryExample1 {
@@ -28,11 +29,21 @@ public class FactoryExample1 {
 		System.out.println(list2);// [11, 2, 3, 4]
 //		list3.set(0, 11);//java.lang.UnsupportedOperationException
 //		list4.set(0, 11);//java.lang.UnsupportedOperationException
-		
-		Set<String> set1=Set.of();//immutable
-		Set<String> set2=Set.of("Ganesh","Tidke");//immutable
+//--------------------------------------------------------------------------------		
+		Set<String> set1 = Set.of();// immutable
+		Set<String> set2 = Set.of("Ganesh", "Tidke");// immutable
 //		Set<String> set3=Set.copyOf("Ganesh","Tidke");//takes collection as argument
-		Set<String> set3=Set.copyOf(set2);//immutable
+		Set<String> set3 = Set.copyOf(set2);// immutable
+//--------------------------------------------------------------------------------		
+
+		Map<String, String>  map1=Map.of();//Immutable
+		Map<String, String>  map2=Map.of("Gan","Two","Tidk","four");//Immutable
+//		Map<String, String>  map3=Map.of("Gan","Two","Tidk");//error as Key1,val1 ,Key2 
+		
+		
+		
+		
+		
 		
 		
 	}
