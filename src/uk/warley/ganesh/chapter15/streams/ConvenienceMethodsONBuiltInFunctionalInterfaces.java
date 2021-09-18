@@ -15,7 +15,7 @@ public class ConvenienceMethodsONBuiltInFunctionalInterfaces {
 		
 		Function<String, Integer> function1=s->s.length();
 		Function<Integer, Float> function2=s->10f;
-		Function<String, Float> function3=function1.andThen(function2);//<T,R>andThen <R,V> =<T,R>
+		Function<String, Float> function3=function1.andThen(function2);//<T,R>andThen <R,V> =<T,V>
 		System.out.println(function3.apply("Ganesh"));//10.0 
 		
 		Function<String, Integer> after=s->s.length();
