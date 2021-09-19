@@ -28,11 +28,13 @@ Run  modulerized project now
 java -p mods -m xyz/com.app.warley2.XYZ
 
 ---------for top bottom approach - create XYZ as module and run everything in modulerized fashion using -p and -m instead -cp
-step1. convert xyz.jar into module
+step1. convert xyz.jar into module where xyz.jar does not requires abc or may be as automatic modules are given names by java
 run xyz.jar- here abc is still  used as automatic module which is simple jar
+
+javac  -p jars xyz_mod/com/app/warley2/XYZ.java xyz_mod/module-info.java
 >java -p mods;jars -m xyz/com.app.warley2.XYZ
 
-step2. convert abc into module
+step2. convert abc into module and xyz.jar requires abc
 and run everythign as module
 here abc.jar is module
 java -p mods -m xyz/com.app.warley2.XYZ
