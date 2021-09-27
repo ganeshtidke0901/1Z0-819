@@ -28,5 +28,6 @@ public class ConcurrentClassesExample37 {
 		}
 		System.out.println(blockingQueue);// [] after 10 seconds it is printed
 
+		
 	}
 }

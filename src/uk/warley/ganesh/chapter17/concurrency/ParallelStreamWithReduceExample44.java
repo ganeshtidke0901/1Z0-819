@@ -2,7 +2,11 @@ package uk.warley.ganesh.chapter17.concurrency;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ParallelStreamWithReduceExample44 {
 	public static void example1() {
@@ -63,29 +67,53 @@ public class ParallelStreamWithReduceExample44 {
 //		Combiner:[XZY].addAll([ABC])
 //		Combiner:[Ganesh, Tidke].addAll([XZY, ABC])
 //		[Ganesh, Tidke, XZY, ABC]
+		
 	}
 
 	public static void example3() {
-
-//		String s=List.of("a","b","c","d","e","f","g","h","i","j","k","l").parallelStream().reduce("X",(s1,s2)-> s1+s2);
-//		or
-		String s = List.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l").parallelStream().reduce("X",
-				(s1, s2) -> {
-					System.out.println(
-							"Thread id" + Thread.currentThread().getId() + " Accumalator:" + s1 + "+" + s2 + "");
-					return s1 + s2;
-				});
-
-		System.out.println(s);//
+		
+		List.of(1,2,3,4).parallelStream().collect(Collectors.toSet());
+		//this does not support parallel reduction
+		
+		//to achieve it 
+		//1. stream is parallel
+		//And stream is unordered or collector is Characteristics.UNORDERED
+		//And Collecor is  s Characteristics.CONCURRENT
+		//in this case collector is Characteristics.UNORDERED but nut  CONCURRENT
+		
+		
 	}
 
 	static void example4() {
+		Stream<String> ohMy=Stream.of("lions","tigers","bears");
+		Map<Integer, String> map =ohMy.collect(Collectors.toMap(k->k.length(),v->v,(s1,s2)->s1+"-"+s2));
+		System.out.println(map);//{5=lions-bears, 6=tigers}
+		
+		Stream<String> ohMy1=Stream.of("lions","tigers","bears").parallel();
+		ConcurrentMap<Integer, String> map1 =ohMy1.collect(Collectors.toConcurrentMap(k->k.length(),v->v,(s1,s2)->s1+"-"+s2));
+		System.out.println(map1);//{5=lions-bears, 6=tigers}
+		
+		Collector<String, ?, ConcurrentMap<Object, Object>> b=Collectors.toConcurrentMap(k->k.length(),v->v,(s1,s2)->s1+"-"+s2);
+		System.out.println(b.characteristics());//[CONCURRENT, UNORDERED, IDENTITY_FINISH]
+		System.out.println(Collectors.toSet().characteristics());//[UNORDERED, IDENTITY_FINISH]
+		
+		
 	}
 
+	static void example5() {
+		
+		Stream<String> ohMy1=Stream.of("lions","tigers","bears").parallel();
+		ConcurrentMap<Integer, List<String>> map1 =ohMy1.collect(Collectors.groupingByConcurrent(s->s.length()));
+		System.out.println(map1);//{5=lions-bears, 6=tigers}
+		
+		
+		
+	}
 	public static void main(String[] args) {
 //		example1();
-		example2();
+//		example2();
 //		example3();
 //		example4();
+		example5();
 	}
 }
