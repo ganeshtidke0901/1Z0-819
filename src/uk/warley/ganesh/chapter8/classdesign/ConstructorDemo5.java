@@ -3,7 +3,7 @@ package uk.warley.ganesh.chapter8.classdesign;
 public class ConstructorDemo5 {
 	String s;
 
-	private ConstructorDemo5() {// private con is written , default con is not prrovided
+	private ConstructorDemo5() {// private con is written , default con is not provided
 		this("Ganesh");
 	}
 

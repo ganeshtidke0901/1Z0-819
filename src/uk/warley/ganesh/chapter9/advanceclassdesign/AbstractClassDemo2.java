@@ -20,7 +20,7 @@ abstract class Class3 {
 
 public class AbstractClassDemo2 extends Class3 {
 	public static void main(String[] args) {
-		var a = new AbstractClassDemo2();
+		var a = new AbstractClassDemo2();//Class3()
 	}
 
 	@Override

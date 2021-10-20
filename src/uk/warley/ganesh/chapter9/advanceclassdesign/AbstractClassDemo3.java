@@ -5,7 +5,6 @@ import java.util.List;
 
 abstract class Class5 {
 	public abstract void show();
-
 	abstract public List<String> test();
 
 }
@@ -27,6 +26,6 @@ abstract class Class6 extends Class5 {
 
 public abstract class AbstractClassDemo3 {
 	
-//	public  abstract static void justTest();//abstract and static does not work for method 
+//	public  abstract static void justTest();//abstract and static does not work for method  as abstract must be overridden and static works as hidden method
 
 }

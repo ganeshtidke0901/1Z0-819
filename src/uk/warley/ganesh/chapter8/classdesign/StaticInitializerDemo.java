@@ -16,8 +16,16 @@ public class StaticInitializerDemo {
 		System.out.println(j);// 20
 		System.out.println(k);// 2
 
+		
+//		Static Initializer
+//		Instance Initializer
+//		10
+//		20
+//		2
+		
+		
 		ClassD classD = null;// class is not loaded until any method or variable is used or object is created
-		classD.m1();// now static initialiser is called
+		classD.m1();// now static initializer is called
 
 		ClassB b;// does not intialize the static block 
 	}
