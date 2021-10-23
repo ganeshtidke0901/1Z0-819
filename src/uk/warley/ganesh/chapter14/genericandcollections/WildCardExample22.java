@@ -2,7 +2,7 @@ package uk.warley.ganesh.chapter14.genericandcollections;
 
 import java.util.function.Consumer;
 
-public class WildCardExample3 {
+public class WildCardExample22 {
 
 	public static void main(String[] args) {
 		AA<String> a = new AA<String>();
@@ -23,6 +23,7 @@ public class WildCardExample3 {
 		t2=(Consumer<? super Object>) t1;
 		
 		t1=(Consumer<? super String>) t3;
+		t3=(Consumer<? extends String>) t1;
 		
 		Consumer<Object> t4 = s -> System.out.println(s);
 		t1=t4;

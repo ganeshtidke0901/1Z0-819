@@ -3,7 +3,7 @@ package uk.warley.ganesh.chapter14.genericandcollections;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListMethodsExample2 {
+public class ListMethodsExample5 {
 	public static void main(String[] args) {
 
 		List<Integer> list = new ArrayList<Integer>();

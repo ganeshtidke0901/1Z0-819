@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.BiFunction;
 
-public class MapMethodsExample1 {
+public class MapMethodsExample8 {
 	public static void main(String[] args) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		map.put(null, null);

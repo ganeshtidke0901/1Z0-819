@@ -2,7 +2,9 @@ package uk.warley.ganesh.chapter14.genericandcollections;
 
 import java.util.ArrayList;
 
-public class WrapperClassesExample1 {
+public class WrapperClassesExample3 {
+	
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 
 		var var = new ArrayList<Integer>();// ArrayList<Integer> var

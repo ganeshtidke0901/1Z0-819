@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ComparatorExample3 {
+public class ComparatorExample13 {
 	public static void main(String[] args) {
 		List<Squirrel1> list = new ArrayList<Squirrel1>();
 		list.add(new Squirrel1(2, "ABC"));
@@ -42,7 +42,7 @@ public class ComparatorExample3 {
 		
 		Collections.sort(list,
 				Comparator.comparing(Squirrel1::getSpecies).thenComparing(Comparator.comparing(Squirrel1::getWeight).reversed()));
-		System.out.println(list);// [1-ABC, 2-ABC, 4-PQR, 5-PQR, 1-XYZ]
+		System.out.println("--"+list);// [2-ABC, 1-ABC, 5-PQR, 4-PQR, 1-XYZ]
 
 //		Collections.sort(list, Comparator.reverseOrder());//Squirrel needs to implement Comparable(order set by Comparable)
 //		Collections.sort(list, Comparator.naturalOrder());//Squirrel needs to implement Comparable(reverse of order set by Comparable)

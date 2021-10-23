@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class CollectionExtras {
+public class CollectionExtras23 {
 	public static void main(String[] args) {
 		List<String> list1 = new ArrayList<String>();
 		List<String> list2 = new ArrayList<String>(12);

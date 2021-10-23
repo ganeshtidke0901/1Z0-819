@@ -1,10 +1,6 @@
 package uk.warley.ganesh.chapter14.genericandcollections;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -55,7 +51,7 @@ public class MethodReferenceExample2 {
 		Function<Penguin, Integer> function1 = p -> Penguin.countBabies(p);// R apply(T)
 		Function<Penguin, Integer> function2 = Penguin::countBabies;
 
-		BiFunction<Penguin, Penguin, Integer> bifunction1 = (p, q) -> Penguin.countBabies(p);// R apply(T,U)
+		BiFunction<Penguin, Penguin, Integer> bifunction1 = (p, q) -> Penguin.countBabies(p,q);// R apply(T,U)
 		BiFunction<Penguin, Penguin, Integer> bifunction2 = Penguin::countBabies;
 
 		BiFunction<Penguin, Penguin, Integer> bifunction3 = (p, q) -> p.countBabies1();// in lambda its upto us what we
@@ -82,6 +78,10 @@ public class MethodReferenceExample2 {
 		
 		Function<Penguin, Integer> function3=p::countBabies3;// s-> p.countBabies3(s);
 		BiFunction<Penguin,Penguin, Integer> bifunction7=Penguin::countBabies3;// (p,q)-> p.countBabies3(q);
+		
+		
+		Predicate<String> p1=s-> s.startsWith("A");//
+		Consumer<String> p2=s-> s.startsWith("A");//when there is not return for method , body lamda body returns or not , does not matter
 		
 	}
 }

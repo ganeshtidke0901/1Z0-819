@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ComparatorExample4 {
+public class ComparatorExample14 {
 	public static void main(String[] args) {
 		List<Platypus> list = Arrays.asList(new Platypus("Paula", 3), new Platypus("Peter", 5),
 				new Platypus("Peter", 7));

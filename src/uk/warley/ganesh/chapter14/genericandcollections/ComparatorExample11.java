@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ComparatorExample1 implements Comparable<ComparatorExample1> {
+public class ComparatorExample11 implements Comparable<ComparatorExample11> {
 	private int id;
 	private String name;
 
@@ -14,28 +14,28 @@ public class ComparatorExample1 implements Comparable<ComparatorExample1> {
 		return id + "-" + name;
 	}
 
-	public ComparatorExample1(int id, String name) {
+	public ComparatorExample11(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
 	@Override
-	public int compareTo(ComparatorExample1 o) {
+	public int compareTo(ComparatorExample11 o) {
 		if (o == null)
 			throw new IllegalArgumentException("poorely formed object");
 		return this.id - o.id;
 	}
 
 	public static void main(String[] args) {
-		List<ComparatorExample1> list = new ArrayList<ComparatorExample1>();
-		list.add(new ComparatorExample1(2, "Ganesh"));
-		list.add(new ComparatorExample1(1, "Ashwini"));
+		List<ComparatorExample11> list = new ArrayList<ComparatorExample11>();
+		list.add(new ComparatorExample11(2, "Ganesh"));
+		list.add(new ComparatorExample11(1, "Ashwini"));
 
 		Collections.sort(list);
-		System.out.println(list);
+		System.out.println(list);//[1-Ashwini, 2-Ganesh]
 
-		Comparator<ComparatorExample1> comparator = (o1, o2) -> o2.id - o1.id;
+		Comparator<ComparatorExample11> comparator = (o1, o2) -> o2.id - o1.id;
 
 		Collections.sort(list,comparator);
 		System.out.println(list);//[2-Ganesh, 1-Ashwini]

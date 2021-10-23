@@ -1,5 +1,7 @@
 package uk.warley.ganesh.chapter12.javafundamentals;
 
+import java.util.Comparator;
+
 enum Season {
 	WINTER("winter") {
 
@@ -44,4 +46,19 @@ public class EnumExample6 {
 		Season.test();//static 
 		
 	}
+	
+	
+	
+}
+
+
+//oho possible
+enum XXY implements Comparator<String>{
+;
+
+@Override
+public int compare(String o1, String o2) {
+	return 0;
+}
+
 }

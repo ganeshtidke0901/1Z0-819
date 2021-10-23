@@ -2,7 +2,7 @@ package uk.warley.ganesh.chapter14.genericandcollections;
 
 import java.util.ArrayList;
 
-public class GenericsMethodsExample1 {
+public class GenericsMethodsExample19 {
 	public static void main(String[] args) {
 
 		Generic4.<String>test("Ganesh");// explicitly telling T type

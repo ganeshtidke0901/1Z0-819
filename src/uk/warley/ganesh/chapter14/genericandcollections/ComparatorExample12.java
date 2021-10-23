@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ComparatorExample2 {
+public class ComparatorExample12 {
 	public static void main(String[] args) {
 		List<Squirrel> list = new ArrayList<Squirrel>();
 		list.add(new Squirrel(2, "ABC"));

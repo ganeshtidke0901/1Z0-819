@@ -1,20 +1,29 @@
+
 package uk.warley.ganesh.chapter14.genericandcollections;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WildCardExample2 {
+public class RestrictingGenericTypeWildCardExample21 {
 
 	// need to specify T type before void
 //	void test(List<T> a)
 //	{
 //	} 
 
-	// parameters should always be wildcard or specific type
+	// parameters should always be wildcard or specific type  List<? extends A0> or List<T> 
 //	public static <T extends A0>void test(List<T extends A0> a)
 //	{
 //	} 
 
+//	public static <T super A0>void test2222(T a)//super is not allowed
+//	{
+//	} 
+	public static <T extends A0>void test(List<? extends T> a)
+	{
+	} 
+	
+	
 	public static <T extends A0> void test(T a) {
 	}
 
@@ -91,3 +100,5 @@ class GGG implements Comparable<GGG1>{
 	
 }
 class GGG1 extends GGG{}
+
+

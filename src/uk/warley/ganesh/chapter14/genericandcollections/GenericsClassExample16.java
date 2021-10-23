@@ -1,6 +1,6 @@
 package uk.warley.ganesh.chapter14.genericandcollections;
 
-public class GenericsClassExample1 {
+public class GenericsClassExample16 {
 	public static void main(String[] args) {
 
 		Generic1<String> gen1 = new Generic1<>();

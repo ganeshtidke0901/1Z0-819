@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class WildCardExample1 {
+public class WildCardExample20 {
 
 	public static void main(String[] args) {
 		List<String> list1 = new ArrayList<String>();
 //		List<Object>list2=new ArrayList<String>();//type parameter should be same on both side-left and right of expression
 
+		
 		// Unbounded
 		List<?> list3 = new ArrayList<String>();
 //		list3.add("Ganesh");// not allowed as we dont know which data type to go into
@@ -25,7 +26,7 @@ public class WildCardExample1 {
 		// Lower bounded wildcard
 		List<? super A> list7 = new ArrayList<A>();
 		List<? super A> list8 = new ArrayList<Object>();
-//		List<? super A> list9=new ArrayList<B>();//not allowed as anything that is A or superclass of A
+//		List<? super A> list9=new ArrayList<B>();//not allowed as anything that is A or super type of A
 		list7.add(new A());
 		list7.add(new B());
 		list7.add(new C());
@@ -35,14 +36,7 @@ public class WildCardExample1 {
 
 //		List<?> list=new ArrayList<? extends A>();//does not work wildcard on both side
 
-//		list3=list1;
-//		list1=(List<String>) list3;
-//		
-//		list3=list4;
-//		list4=(List<? extends A>) list3;
-//		
-//		list3=list7;
-		list7 = (List<? super A>) list3;
+
 		list7.add(new A());
 		for (Iterator iterator = list7.iterator(); iterator.hasNext();) {
 			Object object1 = (Object) iterator.next();// if we made it as String , there would be class cast exception
@@ -61,7 +55,23 @@ public class WildCardExample1 {
 		
 		
 		list4=(List<? extends A>) list7;
+		list7=(List<? super A>) list4;
 		
+		
+		//heap polution
+		String []ss=new String[2];
+		Object[] oo=ss;
+//		oo[0]=Integer.valueOf(1);//ArrayStoreException
+
+		
+		list3=list1;
+		list1=(List<String>) list3;
+//		
+		list3=list4;
+		list4=(List<? extends A>) list3;
+//		
+		list3=list7;
+		list7 = (List<? super A>) list3;		
 	}
 }
 
