@@ -1,6 +1,6 @@
 package uk.warley.ganesh.chapter12.javafundamentals;
 
-public class InnerInerfaceEnumDemo {
+public class InnerInerfaceEnumDemo18 {
 
 	private enum ABC {
 	}

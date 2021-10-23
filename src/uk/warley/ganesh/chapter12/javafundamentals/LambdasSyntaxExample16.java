@@ -3,7 +3,7 @@ package uk.warley.ganesh.chapter12.javafundamentals;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-public class LambdasSyntaxExample1 {
+public class LambdasSyntaxExample16 {
 	public static void main(String[] args) {
 		// all valid syntax -commented
 //		()-> 0

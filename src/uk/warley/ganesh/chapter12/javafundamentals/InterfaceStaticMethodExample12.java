@@ -14,10 +14,10 @@ interface Run1 {
 	}
 }
 
-//static methods in interfaces are never inherited unlike in class it get hidden
-public class InterfaceStaticMethodExample2 implements Run1,Walk1{
+//static methods in interfaces are never inherited unlike in class it gets hidden
+public class InterfaceStaticMethodExample12 implements Run1,Walk1{
 
-	public int getSpeed() {// this neither overriden or hidden - (cant access getSpeed() of Walk1 or Run1 at all as it is not inherited)
+	public int getSpeed() {// this neither overridding  or hiding - (cant access getSpeed() of Walk1 or Run1 at all as it is not inherited)
 		return 10;
 	}
 	
@@ -29,6 +29,6 @@ public class InterfaceStaticMethodExample2 implements Run1,Walk1{
 	}
 	
 	public static void main(String[] args) {
-		new InterfaceStaticMethodExample2().test();
+		new InterfaceStaticMethodExample12().test();
 	}
 }

@@ -11,6 +11,7 @@ package uk.warley.ganesh.chapter13.annotations;
 	String surname();// Required Element- implicitly public abstract as same of interface method
 
 	String ab() default "No";// Optional Element
+	String s="Hello";//act as constant-public static final
 }
 
 @interface Annotation3 {
@@ -69,7 +70,10 @@ package uk.warley.ganesh.chapter13.annotations;
 @Annotation5(13) // or @Annotation5({13}) or @Annotation5(value=12) or @Annotation5(value={1,2})
 @Annotation6(v = 11) // shorthand of array {11} if single value
 public class AnnotationsExample1 {
+	
 	public static void main(String[] args) {
+	
+	
 	}
 }
 

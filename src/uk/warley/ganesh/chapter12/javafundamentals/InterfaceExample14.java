@@ -1,5 +1,6 @@
 package uk.warley.ganesh.chapter12.javafundamentals;
 
+@FunctionalInterface
 interface Walk3 {
 	private static void abc() {
 		
@@ -19,7 +20,7 @@ interface Walk3 {
 
 }
 
-public class InterfaceExample4 implements Walk3 {
+public class InterfaceExample14 implements Walk3 {
 
 	public static void main(String[] args) {
 	}

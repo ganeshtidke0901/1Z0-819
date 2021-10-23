@@ -24,7 +24,7 @@ interface Sprint1 {
 
 }
 
-//@FunctionalInterface // if it is mentioned then there has to be one abstarct method
+//@FunctionalInterface // if it is mentioned then there has to be one abstract method
 //interface Sprint2 {
 //}
 
@@ -51,6 +51,6 @@ interface Sprint4 {
 
 }
 
-public class FunctionalInterfaceExample1 {
+public class FunctionalInterfaceExample15 {
 
 }

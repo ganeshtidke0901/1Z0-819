@@ -15,7 +15,7 @@ interface Walk2 {
 		getSpeedAgain();
 	}
 
-//	only private ,private static , dfault methods allowed
+//	only private ,private static , default(public) methods allowed
 //	protected int getSpeed2() {
 //		return 5;
 //	}
@@ -29,10 +29,10 @@ interface Run2 {
 }
 
 //private methods in interfaces are never inherited like in class
-public class InterfacePrivateMethodExample3 implements Run2, Walk2 {
+public class InterfacePrivateMethodExample13 implements Run2, Walk2 {
 
 
 	public static void main(String[] args) {
-		new InterfacePrivateMethodExample3().walk();
+		new InterfacePrivateMethodExample13().walk();
 	}
 }
