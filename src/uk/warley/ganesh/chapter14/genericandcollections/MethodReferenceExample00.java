@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class MethodReferenceExample1 {
+public class MethodReferenceExample00 {
 	public static void main(String[] args) {
 
 		List<Integer> integers = new ArrayList<Integer>();

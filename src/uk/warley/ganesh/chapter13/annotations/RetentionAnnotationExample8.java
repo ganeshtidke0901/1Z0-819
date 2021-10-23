@@ -20,6 +20,6 @@ import java.lang.annotation.RetentionPolicy;
 
 
 @Annotation52
-public class RetentionExample1 {
+public class RetentionAnnotationExample8 {
 
 }

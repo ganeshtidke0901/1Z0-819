@@ -56,18 +56,18 @@ import java.util.function.Predicate;
 
 }
 
-@Target({ ElementType.MODULE})
+@Target(ElementType.MODULE)
 @interface Annotation20 {
 
 }
 
 @Annotation10
-public class TargetAnnotationExample1 {
+public class TargetAnnotationExample5 {
 	@Annotation11
 	int a;
 
 	@Annotation14
-	public TargetAnnotationExample1(@Annotation13 int a) {
+	public TargetAnnotationExample5(@Annotation13 int a) {
 		super();
 //		@Annotation15//only local variable 
 		this.a = a;

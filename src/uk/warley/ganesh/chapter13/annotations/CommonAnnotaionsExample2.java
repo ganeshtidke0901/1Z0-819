@@ -1,38 +1,30 @@
 package uk.warley.ganesh.chapter13.annotations;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CommonAnnotaionsExample2 {
 
-	public static void main(String[] args) {
-		test1();
-		System.out.println("hello");
-	}
+}
 
-	@SuppressWarnings("deprecation") // uk\warley\ganesh\chapter13\annotations\CommonAnnotaionsExample2.java:17:
-										// warning: [removal] test() in JustAnother has been deprecated and marked for
-										// removal JustAnother.test();
-	static void test1() {
-		JustAnother.test();
-	}
+abstract class Parent {
+	abstract int a();
+}
 
-	@SuppressWarnings("unchecked") // Note: uk\warley\ganesh\chapter13\annotations\CommonAnnotaionsExample2.java uses
-									// unchecked or unsafe operations.
-	static void test2() {
-		JustAnother.test2(new ArrayList());
-		// or
-		List<String> s = new ArrayList();
+class Child extends Parent {
+
+	@Override // optional but applied, it make sure it is overriding method
+	int a() {
+		return 0;
 	}
 }
 
-class JustAnother {
+@FunctionalInterface // market annotation
+interface AA {
+	void test();
 
-	@Deprecated(since = "1.1", forRemoval = true)
-	static public void test() {
-		System.out.println("");
-	}
-	static public void test2(List<String> s) {
-		System.out.println("");
+	String toString();// coming frm Object
+}
+class Justone {
+	
+	@Deprecated(since = "any version may be 1.27.9", forRemoval = true)
+	void test() {
 	}
 }

@@ -7,6 +7,11 @@ import java.lang.annotation.Documented;
 
 }
 
-public class DocumentedExmple1 {
+/**
+ * 
+ * @author ganesh
+ * @since 1.0
+ */
+public class DocumentedAnnoatationExmaple9 { // will be documented along with this class
 
 }

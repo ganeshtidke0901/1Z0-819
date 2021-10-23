@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SafeVarargsExample1 {
+public class SafeVarargsExample12 {
 	public static void main(String[] args) {
 		test(new ArrayList<String>());
 	}

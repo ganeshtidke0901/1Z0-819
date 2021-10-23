@@ -11,12 +11,12 @@ import java.util.function.Predicate;
 }
 
 @Annotation40 //applied to class
-public class AnnotationTypeUseExample1 {//AnnotationTypeUseExample1 is type
+public class TargetAnnotationTypeUseExample6 {//AnnotationTypeUseExample1 is type
 	
 	public static void main(@Annotation40 String[] args) {
 		@Annotation40 List<@Annotation40 String> t=new @Annotation40 ArrayList<@Annotation40 String>();//List is type, String is type
 	
-		@Annotation40  AnnotationTypeParameterExample1 annotationTypeParameterExample1;
+		@Annotation40  TargetAnnotationTypeParameterExample7 annotationTypeParameterExample1;
 		
 		@Annotation40 int bl;//int is type
 		

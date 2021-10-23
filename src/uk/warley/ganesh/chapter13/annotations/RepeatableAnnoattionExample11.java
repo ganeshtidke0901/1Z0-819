@@ -11,16 +11,16 @@ import java.lang.annotation.Repeatable;
 	int a();
 }
 
+//java 8 use
 @Annotation60(a = 1)
-@Annotation60(a = 1)
-@Annotation60(a = 1)
-public class RepeatableExample1 {
+@Annotation60(a = 2)
+@Annotation60(a = 3)
+public class RepeatableAnnoattionExample11 {
 
 }
 
-@Helper({ @Annotation60(a = 1), @Annotation60(a = 1), @Annotation60(a = 1) })
+//OR  Earlier use
+@Helper({ @Annotation60(a = 1), @Annotation60(a = 2), @Annotation60(a = 3) })
 class AXA {
-	
-	
-	
+
 }

@@ -9,12 +9,12 @@ import java.util.function.Predicate;
 }
 
 @Annotation80
-public class TargetDefaultBehaviourExample2 {
+public class TargetAnnotationDefaultBehaviourExample4 {
 	@Annotation80
 	int a;
 
 	@Annotation80
-	public TargetDefaultBehaviourExample2( @Annotation80 int a) {
+	public TargetAnnotationDefaultBehaviourExample4( @Annotation80 int a) {
 	@Annotation80
 		int c;
 	}
@@ -23,7 +23,7 @@ public class TargetDefaultBehaviourExample2 {
 		@Annotation80 List<@Annotation80 String> t=new @Annotation80 ArrayList<@Annotation80 String>();//List is type, String is type
 		
 		@Annotation80  int remaining = (@Annotation80 int )10.1;
-		Predicate<String> p =(@Annotation80 String s)-> true;
+		@Annotation80 Predicate<@Annotation80 String> p =(@Annotation80 String s)-> true;
 		
 	}
 
