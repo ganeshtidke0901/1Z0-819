@@ -7,12 +7,12 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamCommonTerminalOperations {
+public class StreamCommonTerminalOperations7 {
 	public static void main(String[] args) {
 
 		Stream<String> stream4 = Stream.iterate("Ganesh", s -> s.length() < 20, i -> i + i);
-		stream4.forEach(System.out::println);// Ganesh
-												// GaneshGanesh
+		stream4.forEach(System.out::println); // Ganesh
+											  // GaneshGanesh
 
 //		long count = stream4.count();// java.lang.IllegalStateException: stream has already been operated upon or
 //		System.out.println(count);
@@ -21,13 +21,13 @@ public class StreamCommonTerminalOperations {
 		long count1 = stream5.count();// 2
 		System.out.println(count1);// 2
 
-		Stream<String> stream6 = Stream.iterate("Ganesh", s -> s.length() < 20, i -> i + i);
-		Optional<String> optional = stream6.min((s1, s2) -> s1.length() - s2.length());// Comparator
-		optional.ifPresent(System.out::println);// Ganesh
+		Stream<String> stream6 = Stream.of("Ganesh", "Ashwini", "a","abc");
+		Optional<String> optional = stream6.min((s1, s2) -> s1.compareTo(s2));// Comparator
+		optional.ifPresent(s->System.out.println("Min "+s));// Min Ashwini
 
-		Stream<String> stream7 = Stream.iterate("Ganesh", s -> s.length() < 20, i -> i + i);
-		Optional<String> optional1 = stream7.max((s1, s2) -> s1.length() - s2.length());// Comparator
-		optional1.ifPresent(System.out::println);// GaneshGanesh
+		Stream<String> stream7 = Stream.of("Ganesh", "Ashwini", "Tidke","a","abc");
+		Optional<String> optional1 = stream7.max((s1, s2) -> s1.compareTo(s2));// Comparator
+		optional1.ifPresent(s->System.out.println("Max "+s));// Max abc
 
 		Stream<String> stream8 = Stream.iterate("Ganesh", s -> s.length() < 20, i -> i + i);
 		Optional<String> optional2 = stream8.max((s1, s2) -> s2.length() - s1.length());// Comparator

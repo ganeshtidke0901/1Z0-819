@@ -4,7 +4,7 @@ import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
 import java.util.stream.LongStream;
 
-public class OptionalForPrimitives {
+public class OptionalForPrimitives11 {
 	public static void main(String[] args) {
 		LongStream longStream = LongStream.of(5, 0);
 		long l = longStream.sum();
@@ -17,6 +17,6 @@ public class OptionalForPrimitives {
 		System.out.println(optionalDouble.orElseThrow());// DoubleSupplier
 		System.out.println(optionalDouble.orElseThrow(RuntimeException::new));
 
-		// same for IntOptional, LongOptional,DooubleOptional
+		// same for IntOptional, LongOptional,DoubleOptional
 	}
 }

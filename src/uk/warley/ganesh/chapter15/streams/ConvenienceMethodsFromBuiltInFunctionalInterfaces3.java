@@ -5,12 +5,12 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 
-public class ConvenienceMethodsONBuiltInFunctionalInterfaces {
+public class ConvenienceMethodsFromBuiltInFunctionalInterfaces3 {
 	public static void main(String[] args) {
 		Consumer<String> consumer1 = s -> System.out.println(s);
 		Consumer<String> consumer2 = s -> System.out.println("Hello"+s);
 		Consumer<String> consumer3 = consumer1.andThen(consumer2);
-		consumer3.accept("Ganesh");//Ganesh
+		consumer3.accept("Ganesh"); //Ganesh
 							    	//HelloGanesh
 		
 		Function<String, Integer> function1=s->s.length();

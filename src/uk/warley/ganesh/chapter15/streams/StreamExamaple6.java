@@ -3,7 +3,7 @@ package uk.warley.ganesh.chapter15.streams;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class StreamExamaple2 {
+public class StreamExamaple6 {
 	public static void main(String[] args) {
 		
 		//Finite Streams

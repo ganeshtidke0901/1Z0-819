@@ -2,7 +2,7 @@ package uk.warley.ganesh.chapter15.streams;
 
 import java.util.Optional;
 
-public class OptionalExamples {
+public class OptionalExamples4 {
 	public static void main(String[] args) {
 		Optional<String> optional = Optional.empty();
 		System.out.println(optional.isEmpty());// true

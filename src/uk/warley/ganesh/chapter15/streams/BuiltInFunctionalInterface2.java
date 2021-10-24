@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-public class BuiltInFunctionalInterfaces2 {
+public class BuiltInFunctionalInterface2 {
 	public static void main(String[] args) {
 
 

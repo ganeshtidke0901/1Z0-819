@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-public class BuiltInFunctionalInterfaces {
+public class BuiltInFunctionalInterfaces1 {
 	public static void main(String[] args) {
 
 		Supplier<String> supplier = () -> "Ganesh";
@@ -23,6 +23,7 @@ public class BuiltInFunctionalInterfaces {
 		UnaryOperator<String> operator = s -> s + "g";
 		BinaryOperator<String> binaryOperator = (s1, s2) -> s1 + s2;
 
+		
 		System.out.println(supplier.get());// Ganesh
 		consumer.accept("Ganesh");// Ganesh
 		biConsumer.accept("Ganesh", 2);// Ganesh2

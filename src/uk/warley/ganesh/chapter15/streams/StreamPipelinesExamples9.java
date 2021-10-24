@@ -3,7 +3,7 @@ package uk.warley.ganesh.chapter15.streams;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamPipelinesExamples {
+public class StreamPipelinesExamples9 {
 	
 	static void example1()
 	{

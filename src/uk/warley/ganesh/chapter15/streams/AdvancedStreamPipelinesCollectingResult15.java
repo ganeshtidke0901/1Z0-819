@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -14,7 +15,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class AdvancedStreamPipelinesCollectingResult2 {
+public class AdvancedStreamPipelinesCollectingResult15 {
 
 	static void example1() {
 		Stream<String> stream = Stream.of("Ganesh", "Tidke");
@@ -42,6 +43,8 @@ public class AdvancedStreamPipelinesCollectingResult2 {
 		Stream<String> stream1 = Stream.of("G", "T", "I");
 		Double double1 = stream1.collect(Collectors.averagingInt(s -> s.length()));
 		System.out.println(double1);// 1.0
+//		OptionalDouble s=	stream1.mapToInt(s->s.length()).average();
+		
 
 		Stream<String> stream2 = Stream.of("G", "T", "I");
 		long count = stream2.collect(Collectors.counting());
@@ -91,6 +94,11 @@ public class AdvancedStreamPipelinesCollectingResult2 {
 				.collect(Collectors.toMap(s -> s.length(), s -> s, (s1, s2) -> s1 + "--" + s2, HashMap::new));
 		System.out.println(map11);// {1=G--T, 6=Ganesh}
 
+		Stream<String> stream121 = Stream.of("G", "T", "Ganesh");
+		HashMap<String,Integer> map121 = stream121
+				.collect(Collectors.toMap(s -> s, s -> s.length(), (s1, s2) -> s1 +s2, HashMap::new));
+		System.out.println("---"+map121);// ---{Ganesh=6, T=1, G=1}
+		
 		Stream<String> stream12 = Stream.of("Tidke", "ABCDE", "Ganesh");
 		Map<Integer, List<String>> map12 = stream12.collect(Collectors.groupingBy(s -> s.length()));
 		System.out.println(map12);// {5=[Tidke, ABCDE], 6=[Ganesh]}
@@ -119,7 +127,7 @@ public class AdvancedStreamPipelinesCollectingResult2 {
 		System.out.println(map17);// {5=2, 6=1}
 
 		Stream<String> stream18 = Stream.of("Tidke", "ABCDE", "Ganesh");
-		Map<Integer,Optional<Character>> map18=stream18.collect(Collectors.groupingBy(s -> s.length(),Collectors.mapping(s1->s1.charAt(0),Collectors.minBy((a,b)->a-b))));
+		Map<Integer,Optional<Character>> map18=stream18.collect(Collectors.groupingBy(s -> s.length(),HashMap::new,Collectors.mapping(s1->s1.charAt(0),Collectors.minBy((a,b)->a-b))));
 		System.out.println(map18);// {5=Optional[A], 6=Optional[G]}
 
 	}

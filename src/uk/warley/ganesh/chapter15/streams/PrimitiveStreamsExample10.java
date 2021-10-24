@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class PrimitiveStreamsExample1 {
+public class PrimitiveStreamsExample10 {
 	public static void main(String[] args) throws Exception {
 
 		Stream<String> stream = Stream.of("Ganesh", "Tidke", "Mr");
@@ -78,7 +78,7 @@ public class PrimitiveStreamsExample1 {
 		 IntStream intStream11 = IntStream.rangeClosed(1, 5);
 		 IntSummaryStatistics intSummaryStatistics=intStream11.summaryStatistics();
 		 System.out.println(intSummaryStatistics.getCount());//long
-		 System.out.println(intSummaryStatistics.getSum());//double
+		 System.out.println(intSummaryStatistics.getSum());//long
 		 System.out.println(intSummaryStatistics.getAverage());//double
 		 System.out.println(intSummaryStatistics.getMax());//int
 		 System.out.println(intSummaryStatistics.getMin());//int

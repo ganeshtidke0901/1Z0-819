@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class StreamCommonIntermidiateOperations {
+public class StreamCommonIntermidiateOperations8 {
 	public static void main(String[] args) {
 		Stream<String> stream = Stream.of("monkey", "gorilla", "bonobo");
 		stream.filter(s -> s.startsWith("g")).forEach(System.out::println);// gorilla - Predicate is used
@@ -70,12 +70,18 @@ public class StreamCommonIntermidiateOperations {
 																		// []
 
 		Stream<String> stream12= Stream.of("Ganesh", "Tidke", "Mr");
-		Stream<Integer> stream13 = stream.map(s -> s.length());
+		Stream<Integer> stream13 = stream12.map(s -> s.length());
 //		stream12.map(s -> s.length()).forEach(System.out::println);//Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
 
 		Stream<String> stream14= Stream.of("Ganesh", "Tidke", "Mr");
 		stream14.peek(System.out::println);
 //		stream14.forEach(System.out::println);//Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
 
+		
+		Stream<String> stream15= Stream.of("Ganesh", "Tidke", "Mr");
+		Stream stream16=stream15.peek(System.out::println);
+		stream16.forEach(System.out::println);//Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+
 	}
+	
 }

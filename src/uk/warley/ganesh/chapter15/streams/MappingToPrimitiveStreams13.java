@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class MappingToPrimitiveStreams {
+public class MappingToPrimitiveStreams13 {
 	public static void main(String[] args) {
 		Stream<Integer> stream = Stream.of(1, 2);
 		IntStream intStream = stream.mapToInt(s -> s);

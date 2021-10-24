@@ -13,7 +13,7 @@ import java.util.function.ToDoubleBiFunction;
 import java.util.function.ToDoubleFunction;
 import java.util.function.UnaryOperator;
 
-public class FunctionalInterfacesForPrimitives {
+public class FunctionalInterfacesForPrimitives12 {
 	public static void main(String[] args) {
 		BooleanSupplier booleanSupplier = () -> true;
 		System.out.println(booleanSupplier.getAsBoolean());// true

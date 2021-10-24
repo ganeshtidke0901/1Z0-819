@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-public class AdvancedStreamPipelines {
+public class AdvancedStreamPipelines14 {
 
 	static void example1() {
 		var cats = new ArrayList<String>();
@@ -16,8 +16,8 @@ public class AdvancedStreamPipelines {
 		Stream<String> stream = cats.stream();
 		cats.add("Hello");
 		cats.forEach(System.out::println);// Annie
-											// Ripley
-											// Hello
+										 // Ripley
+										// Hello
 
 	}
 
@@ -44,7 +44,7 @@ public class AdvancedStreamPipelines {
 //		Supplier<List<String>> s2 = AdvancedStreamPipelines::create;// compiler error as supplier get method not having
 																	// any checked exception so this method reference is
 																	// addiing extra checked exception which is supposed
-																	// to be handled
+																	// to be handled in create method and remove throws statement
 
 		
 		Supplier<List<String>> s = () -> {
