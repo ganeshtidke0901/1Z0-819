@@ -10,13 +10,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-
-
 public class ConcurrentClassesExample29 {
-
 	static ArrayList<String> s = new ArrayList<String>();
-	static Collection<String> s1=Collections.synchronizedCollection(new ArrayList<String>());
-	public static void main(String[] args) {
+	static Collection<String> s1 = Collections.synchronizedCollection(new ArrayList<String>());
+
+	static void example1() {
 		var map = new HashMap<String, Integer>();
 		map.put("Penguin", 1);
 		map.put("flamingo", 2);
@@ -35,6 +33,9 @@ public class ConcurrentClassesExample29 {
 
 		System.out.println(map2);// {}
 
+	}
+
+	static void example2() {
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
 		for (int i = 0; i < 5; i++) {
 			executorService.submit(() -> {
@@ -42,7 +43,6 @@ public class ConcurrentClassesExample29 {
 			});
 		}
 		executorService.shutdown();
-
 		try {
 			executorService.awaitTermination(5, TimeUnit.SECONDS);
 		} catch (InterruptedException e) {
@@ -51,12 +51,23 @@ public class ConcurrentClassesExample29 {
 		}
 
 		System.out.println(s);
-		
+
 //		[Ganesh, Ganesh, Ganesh]
 //      [Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
-		
-		
 
+	}
+
+	public static void addToCollection() {
+		s.add("Ganesh");
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	static void example3() {
 		ExecutorService executorService1 = Executors.newFixedThreadPool(10);
 		for (int i = 0; i < 5; i++) {
 			executorService1.submit(() -> {
@@ -73,21 +84,38 @@ public class ConcurrentClassesExample29 {
 		}
 
 		System.out.println(s1);
-		//[Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
-		//[Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
-		//[Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
-		//always consistent with one method
-		
+		// [Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
+		// [Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
+		// [Ganesh, Ganesh, Ganesh, Ganesh, Ganesh]
+		// always consistent with one method and both as well
 	}
-
-	public static void addToCollection() {
-		s.add("Ganesh");
+	public static void addToCollection1() {
+		s1.add("Ganesh");
 		try {
 			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	static void example4() {
+	}
+
+	static void example5() {
+	}
+
+	static void example6() {
+	}
+
+	static void example7() {
+	}
+
+	public static void main(String[] args) {
+
+//		example2();
+		example3();
+
 	}
 
 	public static void removeFromCollection() {
@@ -100,16 +128,7 @@ public class ConcurrentClassesExample29 {
 		}
 	}
 
-	public static void addToCollection1() {
-		s1.add("Ganesh");
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
+	
 	public static void removeFromCollection1() {
 		s1.remove("Ganesh");
 		try {

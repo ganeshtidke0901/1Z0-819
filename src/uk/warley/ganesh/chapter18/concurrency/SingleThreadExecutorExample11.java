@@ -48,13 +48,16 @@ public class SingleThreadExecutorExample11 {
 																		// current thread is
 																		// * interrupted, whichever happens first.
 
-				if(executorService.isTerminated())
+				
+				System.out.println(executorService.isShutdown());
+				if(executorService.isTerminated())//all tasks finished following shutdown
 				{
 					System.out.println("All tasks completed");
 				}else
 				{
 					System.out.println("at least one task is running...");
 				}
+				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

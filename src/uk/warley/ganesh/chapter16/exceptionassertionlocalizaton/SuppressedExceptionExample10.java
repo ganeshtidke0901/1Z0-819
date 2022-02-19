@@ -38,14 +38,14 @@ static void example4() {
 		} catch (IllegalStateException e) {
 			System.out.println(e.getMessage());
 			for (Throwable t : e.getSuppressed()) {
-				System.out.println(t.getMessage());// cage door does not close
+				System.out.println(t.getMessage());
 			}
 		}
 	
 //		in try
 //		finally thrown message
 
-//it means finally does not capture/cover suppressed exceptions
+//it means finally thrown exception does not capture/cover suppressed exceptions
 	}
 	
 

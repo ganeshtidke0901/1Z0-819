@@ -2,7 +2,7 @@ package uk.warley.ganesh.chapter18.concurrency;
 
 public class ThreadExample1 {
 	public static void main(String[] args) {
-		Task1 task1 = new Task1();
+		Runnable task1 = new Task1();
 		Thread thread1 = new Thread(task1);
 
 		Thread thread2 = new Task2();

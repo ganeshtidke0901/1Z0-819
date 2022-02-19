@@ -48,7 +48,12 @@ public class TryWithResourcesExceptionExample3 {
 																			// myfileReader=new MyFileReader()
 		{
 		}
-
+		try (AutoCloseable myfileReader2 = new MySomethinigReader()) // either myFileReader or MyFileReader
+		{
+		} catch (Exception e) {//coming from AutoCloseable
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
 

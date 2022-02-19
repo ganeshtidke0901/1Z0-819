@@ -24,4 +24,8 @@ class XYZException extends Exception {
 	public XYZException(String s, Throwable t) {
 		super(s, t);
 	}
+	
+	
+	
+	
 }

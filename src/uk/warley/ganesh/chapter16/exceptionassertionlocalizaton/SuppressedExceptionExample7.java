@@ -39,7 +39,7 @@ public class SuppressedExceptionExample7 {
 		try(JammedTurkeyCage cage=new JammedTurkeyCage()) {
 			System.out.println("in try");
 			throw new Exception("Exception message");
-		}catch (IllegalStateException e) {
+		}catch (IllegalStateException e) {////catching does not matter
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -47,12 +47,12 @@ public class SuppressedExceptionExample7 {
 		
 //		in try
 //		Exception message
-		
+		System.out.println("-------------------");
 		//IllegalStateException from close is suppressed
 		try(JammedTurkeyCage cage=new JammedTurkeyCage()) {
 			System.out.println("in try");
 			throw new Exception("Exception message");
-		}catch (IllegalStateException e) {
+		}catch (IllegalStateException e) {//catching does not matter
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());//Exception message

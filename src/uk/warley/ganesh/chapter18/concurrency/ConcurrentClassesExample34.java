@@ -3,7 +3,7 @@ package uk.warley.ganesh.chapter18.concurrency;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConcurrentClassesExample34 {
-	private final static int noOfThreads = 2;
+	private final static int noOfThreads = 100;
 
 	public static void main(String[] args) throws InterruptedException {
 		VolatileData1 volatileData = new VolatileData1(); // object of VolatileData class
@@ -48,8 +48,8 @@ class VolatileThread1 extends Thread {
 
 	@Override
 	public void run() {
-		int oldValue = data.getCounter();
-		System.out.println("[Thread " + Thread.currentThread().getId() + "]: Volatile Old value = " + oldValue);
+//		int oldValue = data.getCounter();
+//		System.out.println("[Thread " + Thread.currentThread().getId() + "]: Volatile Old value = " + oldValue);
 		data.increaseCounter();
 		int newValue = data.getCounter();
 		System.out.println("[Thread " + Thread.currentThread().getId() + "]: New value = " + newValue);

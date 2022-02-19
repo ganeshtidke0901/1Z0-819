@@ -1,7 +1,7 @@
 package uk.warley.ganesh.chapter18.concurrency;
 
 public class ConcurrentClassesExample33 {
-	private final static int noOfThreads = 2;
+	private final static int noOfThreads = 100;
 
 	public static void main(String[] args) throws InterruptedException {
 		VolatileData volatileData = new VolatileData(); // object of VolatileData class
@@ -13,7 +13,7 @@ public class ConcurrentClassesExample33 {
 		for (int i = 0; i < noOfThreads; ++i)
 			threads[i].join(); // wait for all threads
 
-//		
+		
 //				[Thread 13]: Volatile Old value = 0   Non volatile:0
 //				[Thread 14]: Volatile Old value = 0   Non volatile:0
 //				[Thread 14]: New value = 2   Non volatile:2
@@ -52,9 +52,9 @@ class VolatileThread extends Thread {
 
 	@Override
 	public void run() {
-		int oldValue = data.getCounter();
-		System.out.println("[Thread " + Thread.currentThread().getId() + "]: Volatile Old value = " + oldValue
-				+ "   Non volatile:" + data.getAnotherCounter());
+//		int oldValue = data.getCounter();
+//		System.out.println("[Thread " + Thread.currentThread().getId() + "]: Volatile Old value = " + oldValue
+//				+ "   Non volatile:" + data.getAnotherCounter());
 		data.increaseCounter();
 		int newValue = data.getCounter();
 		System.out.println("[Thread " + Thread.currentThread().getId() + "]: New value = " + newValue

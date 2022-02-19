@@ -31,7 +31,7 @@ public class DateTimeFormattingExample14 {
 		String str5 = dateTimeFormatter5.format(ZonedDateTime.now());
 		System.out.println(str5);// 2021-09-18+01:00
 
-		// here formatter is workingon only Date and in format method we are passing LocaTime
+		// here formatter is working on only Date and in format method we are passing LocaTime
 //		DateTimeFormatter dateTimeFormatter6=DateTimeFormatter.ISO_DATE;
 //		String str6 = dateTimeFormatter6.format(LocalTime.now());//java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: Year
 //		System.out.println(str6);// 2
@@ -41,10 +41,10 @@ public class DateTimeFormattingExample14 {
 		System.out.println(str6);// New 2021 yay!
 
 		TemporalAccessor accessor = dateTimeFormatter6.parse("New  2021 yay!");
-		System.out.println(accessor);
+		System.out.println("--"+accessor);//--{Year=2021},ISO
 
 		LocalDate date=LocalDate.parse("2020-04-30", DateTimeFormatter.ISO_DATE);// 2020-04-30
-		System.out.println(date);
+		System.out.println(date);//
 		System.out.println(LocalDate.parse("New 2020-04-30 yay!", DateTimeFormatter.ofPattern("'New 'yyyy-MM-dd 'yay!'")));// 2020-04-30
 		//we cant parse 'New ' yyyy 'yay!' as it does not have month and date to construct LocalDate
 

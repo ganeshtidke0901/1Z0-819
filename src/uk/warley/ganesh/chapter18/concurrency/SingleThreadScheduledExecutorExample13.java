@@ -3,6 +3,7 @@ package uk.warley.ganesh.chapter18.concurrency;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 public class SingleThreadScheduledExecutorExample13 {
@@ -17,7 +18,7 @@ public class SingleThreadScheduledExecutorExample13 {
 		ScheduledExecutorService executorService = null;
 		try {
 			executorService = Executors.newSingleThreadScheduledExecutor();
-			executorService.schedule(task2, 5,TimeUnit.SECONDS);
+			ScheduledFuture<String>s= executorService.schedule(task2, 5,TimeUnit.SECONDS);
 
 		} finally {
 			if (executorService != null)

@@ -42,7 +42,7 @@ public class SingleThreadExecutorExample9 {
 		String str;
 		try {
 			executorService = Executors.newSingleThreadExecutor();
-			str=executorService.invokeAny(callables);//invokeAll waits for all tasks to be completed
+			str=executorService.invokeAny(callables);//invoke any and completes 1 task and cancel rest ones 
 		} catch (InterruptedException | ExecutionException e) {
 			e.printStackTrace();
 		} finally {

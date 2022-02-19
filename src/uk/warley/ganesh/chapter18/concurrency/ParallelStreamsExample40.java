@@ -26,16 +26,22 @@ public class ParallelStreamsExample40 {
 
 		long endTime = System.currentTimeMillis();
 		System.out.println((endTime - startTime) / 1000 + " seconds");
+//		doWork:1
 //		1
 //		iterating:2
+//		doWork:2
 //		2
 //		iterating:3
+//		doWork:3
 //		3
 //		iterating:4
+//		doWork:4
 //		4
 //		iterating:5
+//		doWork:5
 //		5
 //		5 seconds
+
 
 	}
 
@@ -43,18 +49,30 @@ public class ParallelStreamsExample40 {
 
 		long startTime = System.currentTimeMillis();
 
-		Stream<Integer> stream = Stream.iterate(1, i -> i + 1).parallel();
+		Stream<Integer> stream = Stream.iterate(1, i -> {System.out.println("Iterating"+(i+1));;return i + 1;}).parallel();
 		stream.limit(5).map(i -> doWork(i)).forEach(System.out::println);
 
 		long endTime = System.currentTimeMillis();
 		System.out.println((endTime - startTime) / 1000 + " seconds");
 
-//		3
+//		Iterating2
+//		Iterating3
+//		Iterating4
+//		Iterating5
+//		...
+//		Iterating3458
+//		doWork:4    
+//		doWork:5
 //		4
-//		5
-//		1
+//		doWork:2
 //		2
+//		doWork:3
+//		doWork:1
+//		1
+//		3
+//		5
 //		1 seconds
+
 	}
 
 	public static void example3() {
@@ -70,20 +88,23 @@ public class ParallelStreamsExample40 {
 		long endTime = System.currentTimeMillis();
 		System.out.println((endTime - startTime) / 1000 + " seconds");
 
-//		
-//		iterating:1
-//		iterating:2
-//		iterating:3
-//		...		.
+//		Iterating2
+//		Iterating3
+//		Iterating4
+//		Iterating5
 //		...
-//		iterating:3072
-//		1
+//		Iterating3458
+//		doWork:4    
+//		doWork:5
 //		4
-//		5
+//		doWork:2
 //		2
+//		doWork:3
+//		doWork:1
+//		1
 //		3
+//		5
 //		1 seconds
-
 	}
 
 	static void example4() {
@@ -98,20 +119,23 @@ public class ParallelStreamsExample40 {
 
 		long endTime = System.currentTimeMillis();
 		System.out.println((endTime - startTime) / 1000 + " seconds");
-//		
-//		iterating:1
-//		iterating:2
-//		iterating:3
-//		...		.
+//		Iterating2
+//		Iterating3
+//		Iterating4
+//		Iterating5
 //		...
-//		iterating:3072
-//		1
+//		Iterating3458
+//		doWork:4    
+//		doWork:5
 //		4
-//		5
+//		doWork:2
 //		2
+//		doWork:3
+//		doWork:1
+//		1
 //		3
+//		5
 //		1 seconds
-
 	}
 
 	static void example5() {
@@ -150,30 +174,45 @@ public class ParallelStreamsExample40 {
 		long startTime = System.currentTimeMillis();
 
 		Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8,9);
-		stream.parallel().map(i -> doWork(i)).forEach(System.out::println);
+		stream.parallel().peek(s->{try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}System.out.println("peek:"+s);}).map(i -> doWork(i)).forEach(System.out::println);
 
 		long endTime = System.currentTimeMillis();
 		System.out.println((endTime - startTime) / 1000 + " seconds");
 
+//		peek:4
+//		peek:7
+//		peek:5
+//		peek:3
+//		peek:8
+//		peek:2
+//		peek:1
+//		peek:6
 //		doWork:6
-//		6
-//		doWork:8
-//		doWork:3
-//		3
 //		doWork:7
 //		7
-//		doWork:2
-//		2
 //		doWork:5
 //		5
+//		doWork:8
+//		doWork:2
+//		2
 //		doWork:1
 //		1
-//		doWork:9
-//		9
-//		8
+//		doWork:3
+//		3
 //		doWork:4
 //		4
-//		2 seconds
+//		8
+//		6
+//		peek:9
+//		doWork:9
+//		9
+//		4 seconds
+
 
 		
 	}

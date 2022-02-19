@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class ThreadSafetyUnderstandingExample21 {
+public class ProtectingDataWithAtomicClassesExample21 {
 	private AtomicInteger sheepCount = new AtomicInteger(1);
 	AtomicBoolean atomicBoolean;
 	AtomicLong atomicLong;
@@ -26,7 +26,7 @@ public class ThreadSafetyUnderstandingExample21 {
 	public static void main(String[] args) {
 
 		ExecutorService executorService = Executors.newFixedThreadPool(20);
-		var aa = new ThreadSafetyUnderstandingExample21();
+		var aa = new ProtectingDataWithAtomicClassesExample21();
 
 		try {
 			for (int i = 0; i < 10; i++) {

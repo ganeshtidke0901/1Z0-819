@@ -62,6 +62,6 @@ public class ProtectingDataCyclicBarrierExample27 {
 //		Removing the lions
 //		Removing the lions
 //		Removing the lions
-		//hangs here for 5th thread to reach the barrier limit
+		//b1 hangs here for 5th thread to reach the barrier limit
 	}
 }

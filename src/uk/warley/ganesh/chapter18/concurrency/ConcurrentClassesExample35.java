@@ -7,6 +7,7 @@ import java.util.NavigableSet;
 import java.util.Queue;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentMap;
@@ -14,6 +15,7 @@ import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class ConcurrentClassesExample35 {
 
@@ -80,7 +82,7 @@ public class ConcurrentClassesExample35 {
 		
 		
 		
-//		BlockingQueue<String> blockingQueue=new LinkedBlockingQueue<String>();
+		BlockingQueue<String> blockingQueue=new LinkedBlockingQueue<String>();
 
 	}
 }

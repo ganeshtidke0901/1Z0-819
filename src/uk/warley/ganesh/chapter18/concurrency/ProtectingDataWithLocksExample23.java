@@ -12,6 +12,7 @@ public class ProtectingDataWithLocksExample23 {
 		try {
 			lock.lock();
 			System.out.print((++sheepCount) + " ");
+			
 		} finally {
 			lock.unlock();
 		}

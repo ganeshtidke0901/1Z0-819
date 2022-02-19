@@ -1,5 +1,7 @@
 package uk.warley.ganesh.chapter16.exceptionassertionlocalizaton;
 
+import java.io.Closeable;
+
 public class EffectivelyFinalTryWithResourcesExceptionExample6 {
 
 	final static MySomethinigReader5 mySomethinigReader6 = new MySomethinigReader5();
@@ -13,20 +15,20 @@ public class EffectivelyFinalTryWithResourcesExceptionExample6 {
 //		}
 //		mySomethinigReader5=null;
 
-		MySomethinigReader5 mySomethinigReader5 = new MySomethinigReader5();
+		MySomethinigReader5 mySomethinigReader5 = new MySomethinigReader5();//effectively final 
 		try (MySomethinigReader4 mySomethinigReader4 = new MySomethinigReader4(); mySomethinigReader5) {
 		}
 
-//		Closed3
-//		Closed2
+//		Closed5
+//		Closed4
 
 		try (MySomethinigReader4 mySomethinigReader4 = new MySomethinigReader4(); mySomethinigReader6) {// should be
 																										// final in this
 																										// case
 
 		}
-//		Closed3
-//		Closed2
+//		Closed5
+//		Closed4
 	}
 }
 
@@ -34,14 +36,14 @@ class MySomethinigReader4 implements AutoCloseable {
 
 	@Override
 	public void close() {
-		System.out.println("Closed2");
+		System.out.println("Closed4");
 	}
 }
 
-class MySomethinigReader5 implements AutoCloseable {
+class MySomethinigReader5 implements Closeable {
 
 	@Override
 	public void close() {
-		System.out.println("Closed3");
+		System.out.println("Closed5");
 	}
 }

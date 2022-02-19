@@ -17,6 +17,13 @@ public class LocalizingDateTimeExample17 {
 		System.out.println(dateTimeFormatter2.withLocale(new Locale("fr", "FR")).format(ZonedDateTime.now()));// samedi
 																												// 18
 																												// septembre
+
+		DateTimeFormatter dateTimeFormatter21 = DateTimeFormatter.ofPattern("yyyy MM dd hh:mm",new Locale("fr", "FR"));//local does not matter  here
+		System.out.println("--"+dateTimeFormatter21.format(ZonedDateTime.now()));// Saturday, 18 September 2021
+		System.out.println("--"+dateTimeFormatter21.format(ZonedDateTime.now()));// samedi
+																												// 18
+																												// septembre
+
 		DateTimeFormatter dateTimeFormatter3 = DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL);
 		System.out.println(dateTimeFormatter3.format(ZonedDateTime.now()));// 18:26:10 British Summer Time
 		System.out.println(dateTimeFormatter3.withLocale(new Locale("fr", "FR")).format(ZonedDateTime.now()));// 18:26:10 heure d’été britannique

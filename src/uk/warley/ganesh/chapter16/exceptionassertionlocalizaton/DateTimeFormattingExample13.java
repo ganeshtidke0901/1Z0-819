@@ -16,6 +16,7 @@ public class DateTimeFormattingExample13 {
 		LocalDateTime localDateTime = LocalDateTime.now();
 
 		System.out.println(localDate + "--" + localDate.format(DateTimeFormatter.ISO_LOCAL_DATE));// 2021-09-18--2021-09-18
+		System.out.println(localDate + "--" + DateTimeFormatter.ISO_LOCAL_DATE.format(localDate));// 2021-09-18--2021-09-18
 		System.out.println(localTime + "--" + localTime.format(DateTimeFormatter.ISO_LOCAL_TIME));// 16:31:57.258836600--16:31:57.2588366
 		System.out.println(localDateTime + "--" + localDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));// 2021-09-18T16:31:57.258836600--2021-09-18T16:31:57.2588366
 	

@@ -37,7 +37,6 @@ public class HighLevelioStreamsExampl5 {
 				while ((n = bufferedInputStream.read(bytes, 0, bytes.length)) > 0) {
 					System.out.print(bytes);
 					fileOutputStream.write(bytes, 0, n);
-
 				}
 				bufferedOutputStream.flush();
 			} finally {

@@ -50,7 +50,7 @@ public class SingleThreadExecutorExample10 {
 
 		System.out.println(future1.isCancelled());//false
 		System.out.println(future2.isCancelled());//false
-		System.out.println(future3.isCancelled());//fasle
+		System.out.println(future3.isCancelled());//false
 
 		try {
 			System.out.println(future1.get());// Waits if necessary for the computation to complete, and then retrieves

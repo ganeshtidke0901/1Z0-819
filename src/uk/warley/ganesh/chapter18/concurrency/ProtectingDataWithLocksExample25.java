@@ -12,10 +12,16 @@ public class ProtectingDataWithLocksExample25 {
 	private  void incrementAndReport() {
 
 		try {
-			if(lock.tryLock(100, TimeUnit.MILLISECONDS)) {
+			if(lock.tryLock(1500, TimeUnit.MILLISECONDS)) {
 				System.out.println("able to obtain the lock");
 				try {
 					System.out.print((++sheepCount) + " ");
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} finally {
 					lock.unlock();
 				}

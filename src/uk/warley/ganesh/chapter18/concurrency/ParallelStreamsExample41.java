@@ -40,9 +40,9 @@ public class ParallelStreamsExample41 {
 	}
 	
 	public static void main(String[] args) {
-//		example1();
+		example1();
 //		example2();
 //		example3();
-		example4();
+//		example4();
 	}
 }
