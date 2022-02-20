@@ -1,4 +1,4 @@
-package uk.warley.ganesh.chapter20;
+package uk.warley.ganesh.chapter20.nio2;
 
 import java.io.File;
 import java.io.IOException;
