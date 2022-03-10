@@ -28,7 +28,7 @@ public class FunctionalInterfacesForPrimitives12 {
 
 		// same for IntPredicate, LongPredicate
 		DoublePredicate doublePredicate = (s) -> s == 100.0;
-		System.out.println(doublePredicate.test(100));// true
+		System.out.println(doublePredicate.test(100d));// true
 
 		// same for DoubleFunction,LongFunction
 		IntFunction<String> function = (i) -> i + "Ganesh";

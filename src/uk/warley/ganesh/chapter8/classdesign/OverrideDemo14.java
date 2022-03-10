@@ -29,7 +29,7 @@ class AB3 {
 		return 60;
 	}
 
-	List<String> pp(List<CharSequence> a) throws Exception {
+	protected List<String> pp(List<CharSequence> a) throws Exception {
 		return null;
 	}
 
@@ -70,7 +70,7 @@ public class OverrideDemo14 extends AB3 {
 
 	// return should be co-varient in case of generic and parameter type should be exact
 	@Override
-	ArrayList<String> pp(List<CharSequence> a) throws Exception {
+	protected ArrayList<String> pp(List<CharSequence> a) throws Exception {
 		return null;
 	}
 

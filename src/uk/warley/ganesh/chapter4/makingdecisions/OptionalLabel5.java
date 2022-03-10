@@ -20,6 +20,8 @@ public class OptionalLabel5 {
 			LABEL2: {
 			}
 		LABEL3: System.out.println();
+		int j=0;
+		
 	}
 
 	private static void example3() {
@@ -33,10 +35,10 @@ public class OptionalLabel5 {
 		LABEL1: for (int i = 0; i < 10; i++) {
 			LABEL2: switch (i) {
 			case 0:
-				continue;//allowed as in loop
+			LABEL5:	continue;//allowed as in loop
 
 			default:
-				break;
+				LABEL6: break;
 			}
 		}
 		

@@ -1,7 +1,7 @@
 package uk.warley.ganesh.chapter18.concurrency;
 
 public class ConcurrentClassesExample33 {
-	private final static int noOfThreads = 100;
+	private final static int noOfThreads = 999999    ; 
 
 	public static void main(String[] args) throws InterruptedException {
 		VolatileData volatileData = new VolatileData(); // object of VolatileData class
@@ -12,7 +12,7 @@ public class ConcurrentClassesExample33 {
 			threads[i].start(); // starts all reader threads
 		for (int i = 0; i < noOfThreads; ++i)
 			threads[i].join(); // wait for all threads
-
+System.out.println("volatile:"+volatileData.counter+" Non Volatile:"+volatileData.anotherCounter);
 		
 //				[Thread 13]: Volatile Old value = 0   Non volatile:0
 //				[Thread 14]: Volatile Old value = 0   Non volatile:0
@@ -26,8 +26,8 @@ public class ConcurrentClassesExample33 {
 }
 
 class VolatileData {
-	private volatile int counter = 0;
-	int anotherCounter = 0;
+	public volatile int counter = 0;
+	public int anotherCounter = 0;
 
 	public int getCounter() {
 		return counter;
@@ -56,8 +56,7 @@ class VolatileThread extends Thread {
 //		System.out.println("[Thread " + Thread.currentThread().getId() + "]: Volatile Old value = " + oldValue
 //				+ "   Non volatile:" + data.getAnotherCounter());
 		data.increaseCounter();
-		int newValue = data.getCounter();
-		System.out.println("[Thread " + Thread.currentThread().getId() + "]: New value = " + newValue
+		System.out.println("[Thread " + Thread.currentThread().getId() + "]: New value = " + data.getCounter()
 				+ "   Non volatile:" + data.getAnotherCounter());
 	}
 }

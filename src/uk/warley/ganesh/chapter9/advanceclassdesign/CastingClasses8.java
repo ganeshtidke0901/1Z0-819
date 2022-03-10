@@ -40,10 +40,9 @@ public class CastingClasses8 {
 		child = (Child1) parent;
 		System.out.println(child instanceof Parent1);//true
 		System.out.println(parent instanceof Child1);//true
-		
-		
-		
+		System.out.println(parent instanceof Parent1);//true
 	}
+	
 	static void tests5() {
 		Parent1 parent= new Parent1();
 		Child1 child=null;
@@ -66,7 +65,16 @@ public class CastingClasses8 {
 		
 		
 	}
+	
+	static void tests7() {
+
+		Parent1 child =null;
+		Parent1 parent = null;
+		child = (Child1) parent;
+		parent=child;
+
+	}
 	public static void main(String[] args) {
-		tests5();
+		tests7();
 	}
 }

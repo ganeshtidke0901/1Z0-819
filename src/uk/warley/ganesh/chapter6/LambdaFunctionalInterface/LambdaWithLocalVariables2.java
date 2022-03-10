@@ -16,6 +16,13 @@ public class LambdaWithLocalVariables2 {
 
 	private void example1(final String str) {
 
+		{
+//			String str;//not allowed as str is still in scope
+			String ss;
+		}
+		{
+			String ss;//allowed as there is no duplicate ss as local variable 
+		}
 		Predicate<String> predicate = s -> {
 			//we can define String name=""; scope is different
 			String s1 = "Hello";
@@ -23,15 +30,16 @@ public class LambdaWithLocalVariables2 {
 			String s3 = str + 1;
 			name = "Ganesh";
 			surname = "Tidke";
-			// str="xyz";//Not possible as str should be final or effectively final and can
-			// only read values not update it
+			System.out.println(str);//MR.
+			
 			return s3.isEmpty();
 		};
 		String s1 = "";//
-//		System.out.println(predicate.test("ffd"));
-		System.out.println(name);// null
-		System.out.println(surname);// null
-		example2(predicate);// Ganesh
+		System.out.println(predicate.test("ffd"));//false
+		System.out.println(name);// Ganesh
+		System.out.println(surname);// Tidke
+		example2(predicate);// MR.
+							//Ganesh
 							// Tidke
 
 	}
@@ -43,10 +51,10 @@ public class LambdaWithLocalVariables2 {
 	}
 
 	private static void example3(int a) {
-//		int b = 1;
+		int b = 1;
 //		Predicate<Integer> p1 = a -> { //a is reused
 //
-//			int b = 0;//b is local variable so cant use here
+//			int b = 0;//b is local variable so cant redeclare here 
 //			int c = 0;
 //			return b == c;
 //		};
@@ -58,6 +66,8 @@ public class LambdaWithLocalVariables2 {
 
 		String s1;
 		String s2 = "Ganesh";
+		 String s3="" ;
+	
 		Predicate<String> predicate = new Predicate<String>() {
 			int a;
 			String s1;
@@ -70,7 +80,10 @@ public class LambdaWithLocalVariables2 {
 				// only read values not update it
 				String s1 = "";
 				String str = "N";
+//				s3="";//cant be assigned (if assigned then it is no more effectly final or final)
 //				System.out.println(s2);//Not effectively final
+				
+				String s3;
 				return false;
 			}
 		};

@@ -45,7 +45,7 @@ interface Sprint4 {
 	String toString();// public abstarct but implentor will always implement as it is inherited from Obect class so does
 						// not count as abstract method 
 
-	boolean equals(String o);// // only one abstarct method
+	boolean equals(String o);// // only one abstarct method not from Object class
 
 	int hashCode();// specified in Objects
 

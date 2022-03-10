@@ -4,32 +4,36 @@ import java.io.IOException;
 
 public class CheckedExceptionDemo2 {
 	public static void main(String[] args) {
-		try {
-			example6();
-		} catch (IOException e3) {
-			// TODO Auto-generated catch block
-			e3.printStackTrace();
-		}
-		example5();
-		try {
-			example4();
-		} catch (Throwable e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		example3();
-		try {
-			example2();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
 		try {
 			example1();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		try {
+			example2();
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+
+		example3();
+
+		try {
+			example4();
+		} catch (Throwable e2) {
+			e2.printStackTrace();
+		}
+
+		example5();
+
+		try {
+			example6();
+		} catch (IOException e3) {
+			e3.printStackTrace();
+		}
+		
+		example7();
 
 	}
 
@@ -49,7 +53,7 @@ public class CheckedExceptionDemo2 {
 		}
 	}
 
-	private static void example3()  {
+	private static void example3() {
 		try {
 			System.out.println("something");
 		} catch (Throwable e) {
@@ -71,10 +75,9 @@ public class CheckedExceptionDemo2 {
 		try {
 
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 
-		// IOException is never throw so hadlder is never reachable
+		// IOException is never throw so handler is never reachable
 //		try {
 //
 //		} catch (IOException e) {
@@ -98,21 +101,20 @@ public class CheckedExceptionDemo2 {
 		} catch (IOException e) {
 			// TODO: handle exception
 		}
-		
+
 //		try {
 //		} catch (BrokenBarrierException e) {
 //			// TODO: handle exception
 //		}
 	}
-	
-	private static void example6() throws IOException  {
-			System.out.println("something");
-	}
-	
-	private static void example7() throws RuntimeException{
-		System.out.println("something");
-}
 
+	private static void example6() throws IOException {
+		System.out.println("something");
+	}
+
+	private static void example7() throws RuntimeException {
+		System.out.println("---something");
+	}
 
 	static class RandomException extends Exception {
 	}

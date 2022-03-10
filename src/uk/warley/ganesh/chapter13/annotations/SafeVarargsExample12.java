@@ -5,17 +5,23 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SafeVarargsExample12 {
+	//here you can apply SupressWarnings("unchecked")
+//	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		test(new ArrayList<String>());
 	}
+	//here you can apply SupressWarnings("unchecked")
 
-	@SafeVarargs // is applied to method(final, private, static) and constructor that cant be overriden
+//	@SuppressWarnings("unchecked")
+	@SafeVarargs // is applied to method(final, private, static) or constructor that cant be overriden
 	static void test(List<String>... s) {
 		Object[] t = s;
 		t[0] = Arrays.asList(1, 23);
+		
+//		List<String> l = null;
+//		Object object=l;
 	}
 }
-
 
 
 

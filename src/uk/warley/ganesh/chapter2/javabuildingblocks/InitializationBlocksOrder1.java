@@ -49,16 +49,18 @@ class AA{
 		
 	}
 	int c;
-	{
-		System.out.println("before c=11, c is "+c);
-		c=11;
-		System.out.println("after c=11, c is "+c);
 	
-	}
 	AA()
 	{
 		System.out.println("before AA constru: c="+c);
 		c=12;
 		System.out.println("after AA constru: c="+c);
+	}
+	
+	{
+		System.out.println("before c=11, c is "+c);
+		c=11;
+		System.out.println("after c=11, c is "+c);
+	
 	}
 }

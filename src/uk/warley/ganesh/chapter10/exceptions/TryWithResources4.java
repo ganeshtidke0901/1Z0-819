@@ -10,8 +10,8 @@ public class TryWithResources4 {
 //		example8();
 //		example5();
 //		example4();
-//		example3();
-		example2();
+		example3();
+//		example2();
 //		example1();
 
 	}
@@ -44,29 +44,38 @@ public class TryWithResources4 {
 	}
 
 	private static void example2() {
-//		C c=null;
-//		try(c=new C();)
+//		C c=null;	- Syntax error on token "c", VariableDeclaratorId expected after 
+
+//		try( c=new C();)
 //		{
 //			
 //		}
 
-		
-//		Closing it- implicit finally is added by compiler at the end but run first before any catch/finally
+//		Closing it
 //		Handler
 //		Finally
-		try (C c = new C();) {
+		try (C c = new C();) {// implicit finally is added by compiler at the end but run first before any catch/finally
 			throw new Exception();
 		} catch (Exception e) {
 			System.out.println("Handler");
 		} finally {
 			System.out.println("Finally");
 		}
-		
-		
 
 	}
 
 	private static void example3() {
+//		Hello
+//		Closing it
+//		Finally
+	
+		try (C c = new C();) {// implicit finally is added by compiler at the end but run first before any catch/finally
+		System.out.println("Hello");
+		} catch (Exception e) {
+			System.out.println("Handler");
+		} finally {
+			System.out.println("Finally");
+		}
 	}
 
 	private static void example4() {

@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class LambdasWithAPI3 {
 	public static void main(String[] args) {
-		example1();
+//		example1();
 		example2();
 	}
 
@@ -31,6 +31,8 @@ public class LambdasWithAPI3 {
 		
 		Collections.sort(list2);
 		System.out.println(list2);//[Ganesh, Tidke]
+		Collections.sort(list);//Exception in thread "main" java.lang.UnsupportedOperationException
+		System.out.println(list);
 		
 	}
 

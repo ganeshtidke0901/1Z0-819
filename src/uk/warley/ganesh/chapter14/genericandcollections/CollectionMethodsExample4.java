@@ -41,6 +41,8 @@ public class CollectionMethodsExample4 {
 		
 		System.out.println(list.removeIf(String::isEmpty));//false == s-> s.empty()-calling on parameter object
 		list.forEach(s->System.out.println(s));
+		list.forEach(System.out::println);
+		
 		
 	}
 }

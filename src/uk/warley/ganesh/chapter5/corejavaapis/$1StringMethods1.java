@@ -7,7 +7,7 @@ public class $1StringMethods1 {
 
 	static void example1() {
 		String s = "Ganesh";
-		int l = s.length();//
+		int l = s.length();//6
 
 		char c = s.charAt(0);// G
 //		char d = s.charAt(s.length());// StringIndexOutofBoundException

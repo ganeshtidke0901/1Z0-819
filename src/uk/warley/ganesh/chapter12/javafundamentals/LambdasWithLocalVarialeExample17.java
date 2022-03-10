@@ -15,6 +15,7 @@ public class LambdasWithLocalVarialeExample17 {
 	public void test() {
 		BiPredicate<String, Boolean> p2 = (final var var1, final var var) -> {
 			System.out.println(n);
+			n=11;
 			return true;
 		};
 	}
@@ -27,7 +28,8 @@ public class LambdasWithLocalVarialeExample17 {
 
 		BiPredicate<String, Boolean> p2 = (final var var2, final var var3) -> { // cant use var1 local varible as
 																				// parameter
-//		int var1=11;//cant assign value
+//		int var1=11;//cant create another var1 as it is in local scope
+//			var1=12; cant assign the value as it wil not fit into effectively final
 			System.out.println(var1);
 			return true;
 		};

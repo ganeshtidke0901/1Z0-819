@@ -8,9 +8,9 @@ public class ConvertingArraysToList6 {
 	public static void main(String[] args) {
 
 //		example0();
-		example1();
+//		example1();
 		example2();
-		example3();
+//		example3();
 
 	}
 
@@ -32,7 +32,7 @@ public class ConvertingArraysToList6 {
 
 	private static void example1() {
 		String[] array = { "Ganesh", "Tidke" };
-		List<String> list=List.of(array);
+		List<String> list=List.of(array);//immutable list
 //		list.set(0, "Mr Ganesh");//UnsupportedOperationException
 		
 	}
@@ -48,7 +48,7 @@ public class ConvertingArraysToList6 {
 		System.out.println(list);//[Ganesh, Tidke]
 		String [] array3=list.toArray(new String[0]);//[Ganesh, Tidke]
 		
-		
+		System.out.println(array3.length);//2
 		
 		
 	}

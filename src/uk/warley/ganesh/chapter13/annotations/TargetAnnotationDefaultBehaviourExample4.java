@@ -19,7 +19,7 @@ public class TargetAnnotationDefaultBehaviourExample4 {
 		int c;
 	}
 
-	public void test(int a) {
+	public void test(@Annotation80 int a) {
 		@Annotation80 List<@Annotation80 String> t=new @Annotation80 ArrayList<@Annotation80 String>();//List is type, String is type
 		
 		@Annotation80  int remaining = (@Annotation80 int )10.1;

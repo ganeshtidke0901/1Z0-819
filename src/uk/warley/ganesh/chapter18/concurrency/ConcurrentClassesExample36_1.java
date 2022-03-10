@@ -9,22 +9,22 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class ConcurrentClassesExample36 {
+public class ConcurrentClassesExample36_1 {
 	Collection<String> copyOnWriteListy1 =  Collections.synchronizedCollection(new ArrayList<String>());
 	List<String> copyOnWriteListy = new CopyOnWriteArrayList<>();
 	List<String> list = new ArrayList<>();
 
 	public static void main(String[] args) {
 
-		var a = new ConcurrentClassesExample36();
+		var a = new ConcurrentClassesExample36_1();
 
-		Runnable writer = () -> {
+		Runnable runnable1 = () -> {
 			a.copyOnWriteListy.add("Ganesh");
-//				a.list.add("Tidke");
+			a.copyOnWriteListy.remove("Ganesh");
 
 		};
 
-		Runnable reader = () -> {
+		Runnable runnable2 = () -> {
 //				System.out.println("copyOnArrayList:"+a.copyOnWriteListy);
 //				System.out.println("List:"+a.list);
 			a.copyOnWriteListy.remove("Ganesh");
@@ -34,8 +34,7 @@ public class ConcurrentClassesExample36 {
 
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
 		for (int i = 0; i < 100; i++) {
-			executorService.submit(writer);
-			executorService.submit(reader);
+			executorService.submit(runnable1);
 		}
 
 		executorService.shutdown();
@@ -47,13 +46,11 @@ public class ConcurrentClassesExample36 {
 		}
 		System.out.println(executorService.isShutdown());
 		System.out.println("End:" + a.list + " Size:" + a.list.size());// java.util.ConcurrentModificationException
-		// End:[Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke] Size:9
-		// End:[Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke, Tidke] Size:10
 		System.out.println( "  Size:" + a.copyOnWriteListy.size());
 		System.out.println("End:" + a.copyOnWriteListy + "  Size:" + a.copyOnWriteListy.size());// java.util.ConcurrentModificationException
 		
-		// End:[Ganesh] Size:1
-		// End:[Ganesh, Ganesh] Size:2
+		// End:[] Size:0
+		// End:[] Size:0
 		// End:[] Size:0
 
 		// any concurrent classes - make sure at any point update/modification/write being done on shared

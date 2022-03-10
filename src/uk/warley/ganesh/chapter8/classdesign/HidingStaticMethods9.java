@@ -36,5 +36,7 @@ public class HidingStaticMethods9 extends AC2 {
 	public static void main(String[] args) {
 		test();//Child test
 		AC2.test();//AC2 test
+		AC2 ac2=null;
+		ac2.test();//AC2 test
 	}
 }

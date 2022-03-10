@@ -33,7 +33,7 @@ public class OverrideDemo15 extends AB4 {
 		return 20;
 	}
 
-	// overriding methid access modifier must be equal or broader /more accessible than parent
+	// overriding method access modifier must be equal or broader /more accessible than parent
 //	@Override
 //	Integer getAveWeigh(int a) {
 //		return 60;
@@ -56,10 +56,10 @@ public class OverrideDemo15 extends AB4 {
 		return null;
 	}
 	public static void main(String[] args) {
-		System.out.println(new OverrideDemo15().getAveWeigh());
+		System.out.println(new OverrideDemo15().getAveWeigh());//20
 		System.out.println(new AB2().getAveWeigh());
 		
-//		List<CharSequence> ss=new ArrayList<String>();//not allowed so we have ? char
+//		List<CharSequence> ss=new ArrayList<String>();//not allowed so we have ? 
 
 		
 		List<? super String> aa=new ArrayList<CharSequence>();

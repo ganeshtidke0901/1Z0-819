@@ -20,7 +20,7 @@ public class RepeatableAnnoattionExample11 {
 }
 
 //OR  Earlier use
-@Helper({ @Annotation60(a = 1), @Annotation60(a = 2), @Annotation60(a = 3) })
+@Helper(value={ @Annotation60(a = 1), @Annotation60(a = 2), @Annotation60(a = 3) })//value is optional
 class AXA {
 
 }

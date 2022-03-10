@@ -9,6 +9,7 @@ interface Dance {
 }
 
 abstract class AC4 implements Dance {
+//	public void test() {} //we can have this
 }
 
 class Class7 extends AC4 {

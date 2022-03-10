@@ -7,8 +7,8 @@ public class MethodOverloading12 {
 	public static void main(String[] args) {
 		fly();//d  >=0 parameters
 		fly(2);//j  Larger primitives
-		fly((short)2);//j  autoboxing
-		fly(2.2);//o  float> Float> Object
+		fly((short)2);//j  LArger primitives
+		fly(2.2);//o  double> Double> Object
 		//rule
 		// Exact match-> larger primitives-> Autoboxing--> var args
 		
@@ -21,10 +21,16 @@ public class MethodOverloading12 {
 	
 	public static void fly(Integer  a) {
 		System.out.println("h");
+	}	
+	public static void fly(Short  a) {
+		System.out.println("Short A");
 	}
 	public static void fly(float  a) {
 		System.out.println("j");
 	}
+//	public static void fly(double  a) {
+//		System.out.println("double");
+//	}
 	public static void fly(Object a) {
 		System.out.println("o");
 	}

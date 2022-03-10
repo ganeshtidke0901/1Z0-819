@@ -29,7 +29,7 @@ public class NumericPromotion2 {
 		float n=10;
 		float o=m*n;
 
-		System.out.println(100==o);
+		System.out.println(100==o);//true
 		
 		short p= (short)10* (short)10;//here compiler knows the literal value
 		short q=(short) ((short)a* (short)b);

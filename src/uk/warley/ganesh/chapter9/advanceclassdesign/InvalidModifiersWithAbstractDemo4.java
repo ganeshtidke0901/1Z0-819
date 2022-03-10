@@ -8,7 +8,7 @@ abstract class Class4 {
 	// abstract method has to be overridden but private is never inherited so does not work
 //		public abstract private void test();
 
-	// abstract method has to be overridden but final is to be never overridden
+	// abstract method has to be overridden but final method is to be never overridden
 //		public abstract final void test();
 
 	static private void test() {

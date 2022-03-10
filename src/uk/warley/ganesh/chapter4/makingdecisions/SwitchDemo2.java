@@ -7,9 +7,9 @@ public class SwitchDemo2 {
 //		example3(10);
 //		example4();
 //		example5();
-		__(2);// 2
+//		__(2);// 2
 		__(1);// 1 default 2
-		__(10);// default 2
+//		__(10);// default 2
 
 //		example6();
 
@@ -43,6 +43,7 @@ public class SwitchDemo2 {
 	private static void example4() {
 		int a = 20;
 		switch (20) {
+			
 		}
 
 		switch (a) {
@@ -126,6 +127,14 @@ public class SwitchDemo2 {
 //		case l: //DOES NOT COMPILE
 
 		}
+		Byte b=1;
+		final Byte z=1;
+		switch (b) {
+//		case z: only compile time constants
+
+		default:
+			break;
+		}
 //		
 //		Runnable runnable=()->{
 //			System.out.println(a);//a should be final/Effectively final but a has been assigned a vavlue 
@@ -140,7 +149,7 @@ public class SwitchDemo2 {
 			int c = 10;
 			break;
 		case 11:
-//			int c=10;//duplicate c as it is delcraed wtice inn same block
+//			int c=10;//duplicate c as it is declared twice in same block
 			break;
 		default:
 			break;

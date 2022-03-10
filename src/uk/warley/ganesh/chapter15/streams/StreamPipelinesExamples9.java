@@ -44,11 +44,19 @@ public class StreamPipelinesExamples9 {
 		.forEach(System.out::println);//Elsa
 	}
 	
+	static void example5()
+	{
+		Stream.iterate("Ganesh",i->i+1)
+		.filter(n->n.length()<60) 
+		.limit(2) 
+		.peek(System.out::println) 
+		.forEach(System.out::println);//Elsa
+	}
 	
 	
 	public static void main(String[] args) {
 //			example1();
-		example4();
+		example5();
 		
 	}
 }

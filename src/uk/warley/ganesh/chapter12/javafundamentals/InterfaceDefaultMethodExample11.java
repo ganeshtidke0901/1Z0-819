@@ -34,7 +34,7 @@ interface Run {
 //must override getSpeed as it is there in both interfaces
 public class InterfaceDefaultMethodExample11 implements Run, Walk {
 
-	// if parent interfaces both having same signature with covariant return type or not , chidl should
+	// if parent interfaces both having same signature with covarient return type or not , child should
 	// override it
 	@Override
 	public int getSpeed() {

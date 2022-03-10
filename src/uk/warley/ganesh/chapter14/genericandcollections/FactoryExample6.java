@@ -20,9 +20,9 @@ public class FactoryExample6 {
 		List<Integer> list4 = List.copyOf(list3);// immutable list
 		List<Integer> list5 = List.of();// empty immutable list
 
-//		list2.add(100);// java.lang.UnsupportedOperationException
-//		list3.add(100);// java.lang.UnsupportedOperationException
-//		list4.add(100);// java.lang.UnsupportedOperationException
+		list2.add(100);// java.lang.UnsupportedOperationException
+		list3.add(100);// java.lang.UnsupportedOperationException
+		list4.add(100);// java.lang.UnsupportedOperationException
 //		
 
 		list2.set(0, 11);// [11, 2, 3, 4]

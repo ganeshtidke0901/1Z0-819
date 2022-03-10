@@ -35,7 +35,7 @@ public class ArrayListDemo5 {
 		list1.add(0, "Tidke");
 		
 		
-		System.out.println(list1.remove(0));//Ganesh
+		System.out.println(list1.remove(0));//Tidke
 		System.out.println(list1.remove("Tidke"));//false
 	
 		System.out.println(list1.set(0, "Ganesh"));//Ganesh

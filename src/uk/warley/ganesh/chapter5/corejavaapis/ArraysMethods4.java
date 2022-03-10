@@ -1,6 +1,8 @@
 package uk.warley.ganesh.chapter5.corejavaapis;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ArraysMethods4 {
 	public static void main(String[] args) {
@@ -45,8 +47,26 @@ public class ArraysMethods4 {
 		System.out.println(Arrays.mismatch(a9, a10));//0
 		System.out.println(Arrays.mismatch(a10, a9));//0
 		System.out.println(Arrays.mismatch(a3, a4));//-1
-
 		
+		Employee[] employees1 = { new Employee("Ganesh"), new Employee("tidke"), new Employee("ganesh"),
+				new Employee("12a"), new Employee("12A") };
+		Employee[] employees2 = { new Employee("Ganesh"), new Employee("tidke"), new Employee("ganesh"),
+				new Employee("12a"), new Employee("12A") };
+		
+		
+		System.out.println(Arrays.equals(employees1, employees2));//true
+//		List<String> l=null;
+//		l.toArray(new Employee[l.size()]);
+		List<Employee> s0=Arrays.asList(employees1);
+		List<Employee> s1=Arrays.asList(employees1);
+		List<Employee> s2=List.of(employees2);
+		System.out.println("----"+s0.equals(s1));//----true
+		Employee[] employees23 = { new Employee("Ganesh"), new Employee("tidke"), new Employee("ganesh"),
+				new Employee("12a"), new Employee("12A") };
+		List<Employee> s3=Arrays.asList(employees23);
+		
+		System.out.println("----"+s3.equals(s0));//----true
+//		s2.add(null);//java.lang.UnsupportedOperationException
 	}
 
 	private static class Employee implements Comparable<Employee> {
@@ -61,6 +81,16 @@ public class ArraysMethods4 {
 			return "Employee:" + name;
 		}
 
+		@Override
+		public boolean equals(Object obj) {
+			if(obj instanceof Employee)
+			{
+					return this.name.equals(((Employee)(obj)).name);
+			}else
+			{
+				return false;
+			}
+		}
 		@Override
 		public int compareTo(Employee o) {
 			return this.name.compareTo(o.name);

@@ -7,7 +7,7 @@ public class InnerClassExample7 {
 	private void test() {
 	}
 
-	 class Inner1 {
+	private class Inner1 {
 //		private static int a;//cant be declared static unless is constant (final static)
 		final private static int a = 1;
 		private int b = 2;
@@ -26,7 +26,7 @@ public class InnerClassExample7 {
 	abstract class Inner2 extends Inner1 {
 	}
 
-	final protected class Inner3{
+	protected final class Inner3{
 	}
 
 	public class Inner4 {

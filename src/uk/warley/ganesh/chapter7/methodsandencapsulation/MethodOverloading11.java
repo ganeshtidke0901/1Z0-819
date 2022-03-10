@@ -3,11 +3,12 @@ package uk.warley.ganesh.chapter7.methodsandencapsulation;
 public class MethodOverloading11 {
 	public static void main(String[] args) {
 		fly();//a
-		fly(2);// exact matching
+		fly(2);// b exact matching
 		fly((short)2);//g
 		fly(2.2);//o
 		fly(2.2f);//j
-		
+		fly(1,2,3,4);//d
+	
 	}
 
 	public static void fly() {
@@ -37,8 +38,7 @@ public class MethodOverloading11 {
 		System.out.println("c");
 	}
 
-	public static int fly(int... a) {
+	public static void fly(int... a) {
 		System.out.println("d");
-		return 0;
 	}
 }

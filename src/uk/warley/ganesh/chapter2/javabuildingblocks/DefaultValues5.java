@@ -6,6 +6,7 @@ public class DefaultValues5 {
 	static int c;
 	static long d;
 	static float e;
+//	static float e1=0.0; //DOES NOT WORK - NEED TO ADD 0.0F
 	static double f;
 	static char g;
 	static boolean h;

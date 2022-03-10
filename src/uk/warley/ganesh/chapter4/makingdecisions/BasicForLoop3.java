@@ -2,12 +2,12 @@ package uk.warley.ganesh.chapter4.makingdecisions;
 
 public class BasicForLoop3 {
 	public static void main(String[] args) {
-		example1();
-		example2();
+//		example1();
+//		example2();
 		example3();
-		example4();
-		example5();
-		example6();
+//		example4();
+//		example5();
+//		example6();
 		
 	}
 
@@ -33,7 +33,7 @@ public class BasicForLoop3 {
 
 	private static void example3() {
 		byte c=0;
-		for (int i=0,b=10;; c++,c+=2,System.out.println()) {
+		for (int i=0,b=10;c<10; c++,c+=3,System.out.println(c)) {
 			;
 		}
 
@@ -44,11 +44,11 @@ public class BasicForLoop3 {
 		for (int i = 0; i<10; example3()) {
 			
 		}
-//		for (example3(); i<10; ) {} //only declatation allowed n first section
+//		for (example3(); i<10; ) {} //only declaration allowed in first section
 		
 		
 		int i=0;
-//		for (int i = 0; i <10; i++) {} //redeclaring int i as there are not in differnt block {}
+//		for (int i = 0; i <10; i++) {} //redeclaring int i as there are not in different block {}
 		
 	}
 

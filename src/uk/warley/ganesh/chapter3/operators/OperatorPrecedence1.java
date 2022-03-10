@@ -4,8 +4,15 @@ public class OperatorPrecedence1 {
 
 	public static void main(String[] args) {
 
-		example3();
-	}
+//		example2();
+//		example3();
+//		example4();
+//		example5();
+//		example6();
+//		example7();
+		example8();
+//		example9();
+}
 
 	public static void example1() {
 		int a = 10;
@@ -22,7 +29,12 @@ public class OperatorPrecedence1 {
 		int c = a++ * (byte) -++a;
 		System.out.println("a=" + a + " b=" + b + " c=" + c);
 		byte d = -0b0000011;
-		System.out.println(Integer.toBinaryString(d));
+		System.out.println(d);//-3 
+		System.out.println(Integer.toBinaryString(d));//11111111111111111111111111111101  (-3 is stored with 2's complement)
+		System.out.println(Integer.toBinaryString(0b0000011));//00000000000000000000000000000011  (3 is stored as is)
+			System.out.println(0b0000011);//3
+		System.out.println(-0b0000011);//-3
+		
 		//a=12 b=20 c=-120
 		//11111111111111111111111111111101
 
@@ -32,7 +44,8 @@ public class OperatorPrecedence1 {
 		int a = 10;
 		int b = 20;
 		int c = a++ * ++b % a++;
-		System.out.println(c);
+		System.out.println(c);//1
+		System.out.println(10*21%11);//1
 
 	}
 
@@ -40,7 +53,7 @@ public class OperatorPrecedence1 {
 		int a = 10;
 		int b = 20;
 		int c = a++ * ++b % a++ << 2;
-		System.out.println(c);
+		System.out.println(c);//4 (1<<2 ---> 00000000000000000000000000001<<2)
 
 	}
 
@@ -48,7 +61,7 @@ public class OperatorPrecedence1 {
 		int a = 10;
 		int b = 20;
 		int c = (byte) a++ * ++b % a++ << 2; // a++ applied first, ++b , (byte) ,* , <</>>/>>>
-		System.out.println(c);
+		System.out.println(c);//4
 
 	}
 
@@ -56,9 +69,10 @@ public class OperatorPrecedence1 {
 		int a = 10;
 		int b = 20;
 
-		boolean c = b> a && b > 0 && null instanceof String;
-
-		System.out.println(c);
+		boolean c = b> a && b > 0 && null instanceof String && ++b>0;
+		System.out.println(b);//20 here tough ++ has more precedence but && short-circuit  
+		System.out.println(c);// >,instanceof, &&
+		System.out.println(null instanceof String);//false
 
 	}
 	
@@ -75,17 +89,18 @@ public class OperatorPrecedence1 {
 
 	}
 	public static void example8() {
-		int a = 10;
-		int b = 20;
+		int a = 1;
+		int b = 2;
 		int c=   ~-(short)a;
-		System.out.println(~-10);
-		System.out.println(~(-10));
+//		System.out.println(~-10);
+//		System.out.println(~(-10));
 		System.out.println(c);
 		
 		int d= -~(short)a;
-		System.out.println(-~a);
-		System.out.println(-(-11));
-		System.out.println(d);
+//		System.out.println(-~a);
+//		System.out.println(-(-11));
+		System.out.println(~1);//-1-2=-2 
+		System.out.println(-~1);//2
 	}
 
 	

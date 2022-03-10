@@ -74,13 +74,13 @@ public class StreamCommonIntermidiateOperations8 {
 //		stream12.map(s -> s.length()).forEach(System.out::println);//Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
 
 		Stream<String> stream14= Stream.of("Ganesh", "Tidke", "Mr");
-		stream14.peek(System.out::println);
+		stream14.peek(s->System.out.println("--"+s));
 //		stream14.forEach(System.out::println);//Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
 
 		
 		Stream<String> stream15= Stream.of("Ganesh", "Tidke", "Mr");
 		Stream stream16=stream15.peek(System.out::println);
-		stream16.forEach(System.out::println);//Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+		stream16.forEach(System.out::println);
 
 	}
 	

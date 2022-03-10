@@ -58,7 +58,7 @@ public class MethodReferenceExample2 {
 																						// can use out of supplied
 																						// parameters. e.g q is not used
 		BiFunction<Penguin, Penguin, Integer> bifunction4 = (p, q) -> p.countBabies1(q);
-		BiFunction<Penguin, Penguin, Integer> bifunction5 = Penguin::countBabies1;// here is definitely useing p to call
+		BiFunction<Penguin, Penguin, Integer> bifunction5 = Penguin::countBabies1;// here is definitely using p to call
 																					// method and q to be passed to
 																					// method as parameter
 
@@ -82,6 +82,7 @@ public class MethodReferenceExample2 {
 		
 		Predicate<String> p1=s-> s.startsWith("A");//
 		Consumer<String> p2=s-> s.startsWith("A");//when there is not return for method , body lamda body returns or not , does not matter
+		Consumer<String> p3="A"::startsWith;//when there is not return for method , body lamda body returns or not , does not matter
 		
 	}
 }

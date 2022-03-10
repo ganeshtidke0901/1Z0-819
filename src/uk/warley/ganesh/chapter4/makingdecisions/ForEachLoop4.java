@@ -48,7 +48,7 @@ public class ForEachLoop4 {
 
 		}
 		Map<String, String> map = new HashMap<String, String>();
-//		for (String string : map) {	} //Can only  iterate over instance of java.lang.Iterable or aaray
+//		for (String string : map) {	} //Can only  iterate over instance of java.lang.Iterable or array
 
 	}
 

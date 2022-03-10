@@ -23,6 +23,10 @@ interface Walk3 {
 public class InterfaceExample14 implements Walk3 {
 
 	public static void main(String[] args) {
+	
+		new InterfaceExample14().mno();
+		new InterfaceExample14().pqr();;
+		
 	}
 
 	@Override

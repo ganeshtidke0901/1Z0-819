@@ -14,7 +14,7 @@ public class SortingSearchingExample9 {
 
 		
 		
-//		Collections.sort(list); //error as SortRabbits has to implement Comparable
+//		Collections.sort(list); //compiler error as SortRabbits has to implement Comparable
 		//OR
 		Collections.sort(list, (s1,s2)-> s1.toString().compareTo(s2.toString()));
 		

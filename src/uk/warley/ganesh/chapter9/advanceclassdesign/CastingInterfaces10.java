@@ -26,7 +26,7 @@ public class CastingInterfaces10 {
 		runner4 = runner5;
 		UnrelatedInterface interface1 = null;
 		System.out.println(runner4 instanceof Runner4);// true;
-		System.out.println(interface1 instanceof Runner4);// true;
+		System.out.println(interface1 instanceof Runner4);// false;
 
 	}
 
@@ -40,19 +40,30 @@ public class CastingInterfaces10 {
 	static void test3() {
 		A1 a=null;
 		B1 b=null;
-		
+		System.out.println(a instanceof A1);//false
 		a=(A1) b;
 		b=(B1) a;
 		
-		System.out.println(a instanceof A1);
+		System.out.println(a instanceof A1);//false
 		
 	}
-
+	static void test5() {
+		A1 a=new A1() {
+		};
+		B1 b=new B1() {
+		};
+		System.out.println(a instanceof A1);//false
+		a=(A1) b;//Exception in thread "main" java.lang.ClassCastException
+		b=(B1) a;//Exception in thread "main" java.lang.ClassCastException:
+		
+		System.out.println(a instanceof A1);//false
+		
+	}
 	static void test4() {
 
 	}
 
 	public static void main(String[] args) {
-		test1();
+		test5();
 	}
 }

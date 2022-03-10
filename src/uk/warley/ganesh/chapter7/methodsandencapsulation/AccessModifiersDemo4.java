@@ -48,3 +48,18 @@ class ClassC  {
 	}
 
 }
+
+
+class ClassD extends AccessModifiersDemo4  {
+
+	static void test2() {
+		AccessModifiersDemo4 accessModifiersDemo4 = new AccessModifiersDemo4();
+//		System.out.println(accessModifiersDemo4.number);// number is private to ClassB
+//		System.out.println(accessModifiersDemo4.name);// name is default (package-private)
+//		System.out.println(accessModifiersDemo4.surname); // only accessible from within AccessModifiersDemo4 (becomes private to AccessModifiersDemo4 )
+		System.out.println(accessModifiersDemo4.schoolName);
+		
+			
+	}
+
+}

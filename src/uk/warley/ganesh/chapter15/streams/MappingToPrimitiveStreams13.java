@@ -21,7 +21,7 @@ public class MappingToPrimitiveStreams13 {
 		Stream<Integer> stream3 = intStream2.mapToObj(s -> s);// IntFunction<R>
 
 		Stream<Integer> stream4 = Stream.of(1, 2);
-		Stream<String> stream5 = stream4.map(s -> s + "");// Function<T,R>
+		Stream<String> stream5 = stream4.map(n -> n + "");// Function<T,R>
 
 		IntStream intStream3 = IntStream.of(1, 2, 3);
 		IntStream intStream4 = intStream3.map(n -> n * 1);// IntUnararyOperator
@@ -39,6 +39,7 @@ public class MappingToPrimitiveStreams13 {
 																						// IntStreams created to one
 																						// IntStream
 
+		
 		var doubleList = new ArrayList<Double>();
 		DoubleStream doubleStream6 = doubleList.stream().flatMapToDouble(s -> DoubleStream.of(s * 1.0));
 

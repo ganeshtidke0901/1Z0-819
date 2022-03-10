@@ -1,3 +1,5 @@
+
+
 package uk.warley.ganesh.chapter13.annotations;
 
 //marker annotation
@@ -10,6 +12,7 @@ package uk.warley.ganesh.chapter13.annotations;
 
 	String surname();// Required Element- implicitly public abstract as same of interface method
 
+//	private String ab() default "No";// Optional Element
 	String ab() default "No";// Optional Element
 
 	String s = "Hello";// act as constant-public static final
@@ -22,7 +25,7 @@ package uk.warley.ganesh.chapter13.annotations;
 
 	Class b();
 
-//	AnnotationsExample1 annotationsExample1();// only primitive type, String, Class, annotation, enumeration are permitted or 1-dimensional 
+//	AnnotationsExample1 annotationsExample1();// only primitive type, String, Class, annotation, enumeration are permitted or 1-dimensional array
 	int[] c();
 
 //	int [][] d();//multidimentional invalid

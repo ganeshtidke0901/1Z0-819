@@ -5,7 +5,13 @@ public class IfElseDemo1 {
 		example1();
 		example2();
 	}
-
+	private static void example1() {
+		int i = 0;
+		if (i == -1)System.out.println();
+		else if (i == 2)System.out.println();
+		else if (i == 3)System.out.println();
+		else System.out.println();
+	}
 	private static void example2() {
 
 		if(true)
@@ -27,14 +33,13 @@ public class IfElseDemo1 {
 		else System.out.println();
 		else System.out.println();
 
+		if(true) 
+		if(true) 
+		if(false)System.out.println();
+		else System.out.println();
+		else System.out.println();
 		
 	}
 
-	private static void example1() {
-		int i = 0;
-		if (i == -1)System.out.println();
-		else if (i == 2)System.out.println();
-		else if (i == 3)System.out.println();
-		else System.out.println();
-	}
+	
 }

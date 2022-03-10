@@ -19,14 +19,14 @@ public class StaticInitializerDemo10 {
 
 	
 	//will ask to intilize k 
-//	public StaticInitializerDemo2(int a) {
+//	public StaticInitializerDemo10(int a) {
 //	}
 	public StaticInitializerDemo10() {
 		k = 1;// allow in constructor
 	}
 
 	public static void m1() {
-//	l=10; //wont allow
+	//j=10; //wont allow as it has to be initialized in static block or while being declared 
 	}
 
 	public static void main(String[] args) {

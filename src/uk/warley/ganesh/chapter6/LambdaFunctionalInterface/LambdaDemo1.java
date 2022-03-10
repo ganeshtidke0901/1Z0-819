@@ -29,7 +29,7 @@ public class LambdaDemo1 {
 		Comparator<String> comparator5 = (o1, o2) -> 0;
 
 		// Not allowed
-//		Comparator<String> comparator5 = (o1, var o2) -> 0 ;
+//		Comparator<String> comparator10 = (o1, var o2) -> 0 ;
 //		Comparator<String> comparator5 = (String  o1, var o2) -> 0 ;
 //		Comparator<String> comparator6 = (o1, o2) -> return 0 ;
 //		Comparator<String> comparator6 = (o1, o2) -> {return 0 };

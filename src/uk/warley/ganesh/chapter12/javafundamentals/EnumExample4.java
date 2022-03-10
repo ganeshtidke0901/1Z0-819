@@ -61,7 +61,7 @@ enum EnumDemo6 {
 enum EnumDemo7 {
 	WINTER("Hello"), SUMMER, SPRINT, FALL();// if arg constructor is added then no-arg is not added implicitly
 
-	private EnumDemo7() {// if commented out then , error at 58
+	private EnumDemo7() {// if commented out then , error at 61
 	}
 
 	private EnumDemo7(String str) {

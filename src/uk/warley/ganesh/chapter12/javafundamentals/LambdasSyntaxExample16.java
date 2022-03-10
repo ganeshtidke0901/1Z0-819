@@ -4,6 +4,10 @@ import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class LambdasSyntaxExample16 {
+//	var var1=2;//cant use as class member
+//	static var var2=2;//cant use as class member
+	Predicate<Boolean> p4 = (var var) -> false;
+	
 	public static void main(String[] args) {
 		// all valid syntax -commented
 //		()-> 0
@@ -16,9 +20,7 @@ public class LambdasSyntaxExample16 {
 		Predicate<Boolean> p2 = (p) -> false;
 		Predicate<Boolean> p3 = (var) -> false;
 		Predicate<Boolean> p4 = (var var) -> false;
-		Predicate<Boolean> p5 = p -> {
-			return false;
-		};
+		Predicate<Boolean> p5 = p -> {return false;};
 
 //		BiPredicate<String, Boolean> p6=(var,var)-> true;//duplicate parameter
 		BiPredicate<String, Boolean> p6 = (var1, var) -> true;

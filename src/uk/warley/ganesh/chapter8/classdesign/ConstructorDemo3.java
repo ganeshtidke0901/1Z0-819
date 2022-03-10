@@ -7,7 +7,7 @@ public class ConstructorDemo3 {
 	
 
 	public static void main(String[] args) {
-//		ConstructorDemo3 constructorDemo3 = new ConstructorDemo3();// no-arg default constructor is NOT generated if any
+//		ConstructorDemo3 constructorDemo3 = new ConstructorDemo3();// no-arg default constructor is NOT generated if any 
 		// constructor is declared
 		
 		

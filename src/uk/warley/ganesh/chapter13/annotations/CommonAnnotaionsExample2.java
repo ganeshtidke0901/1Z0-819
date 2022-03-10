@@ -1,7 +1,10 @@
 package uk.warley.ganesh.chapter13.annotations;
 
 public class CommonAnnotaionsExample2 {
-
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		Justone.test();
+	}
 }
 
 abstract class Parent {
@@ -16,15 +19,16 @@ class Child extends Parent {
 	}
 }
 
-@FunctionalInterface // market annotation
+@FunctionalInterface // marker annotation
 interface AA {
 	void test();
 
 	String toString();// coming frm Object
 }
+
 class Justone {
-	
+
 	@Deprecated(since = "any version may be 1.27.9", forRemoval = true)
-	void test() {
+	static void test() {
 	}
 }

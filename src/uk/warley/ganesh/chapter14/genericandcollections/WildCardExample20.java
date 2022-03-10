@@ -31,7 +31,7 @@ public class WildCardExample20 {
 		list7.add(new B());
 		list7.add(new C());
 
-//		list7.add(new Object());// not allowed as <? extend A> can take A,B, C
+//		list7.add(new Object());// not allowed as <? super A> can take A
 		Object object = list7.get(0);
 
 //		List<?> list=new ArrayList<? extends A>();//does not work wildcard on both side
@@ -49,7 +49,7 @@ public class WildCardExample20 {
 		}
 		
 		for (Iterator<A> iterator = (Iterator<A>) list4.iterator(); iterator.hasNext();) {
-			Object object3 = (Object) iterator.next();
+			A object3 = iterator.next();
 			System.out.println(object3);
 		}
 		

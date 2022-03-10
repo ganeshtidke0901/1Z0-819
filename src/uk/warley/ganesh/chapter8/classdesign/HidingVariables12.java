@@ -1,7 +1,7 @@
 package uk.warley.ganesh.chapter8.classdesign;
 
 class AC5{
-	protected String name = "Parent";
+	public String name = "Parent";
 	protected static String name1 = "Parent";
 	
 	protected String name2="parent";

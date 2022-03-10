@@ -19,7 +19,7 @@ public class RestrictingGenericTypeWildCardExample21 {
 //	public static <T super A0>void test2222(T a)//super is not allowed
 //	{
 //	} 
-	public static <T extends A0>void test(List<? extends T> a)
+	public static <T extends A0>void test(List<? super T> a)
 	{
 	} 
 	

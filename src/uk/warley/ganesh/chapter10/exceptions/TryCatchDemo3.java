@@ -3,13 +3,14 @@ package uk.warley.ganesh.chapter10.exceptions;
 public class TryCatchDemo3 {
 	public static void main(String[] args) {
 //		System.out.println(example6());
-		System.out.println(example9());
+//	
 //		example5();
 //		example4();
 //		example3();
 //		example2();
 //		example1();
-
+//		example8();
+		System.out.println(example9());
 	}
 
 	private static void example1() {
@@ -65,7 +66,11 @@ public class TryCatchDemo3 {
 
 	private static void example5() {
 
-		// throws Arithmetic exception as the last exceptio from this method as catch one is
+		// throws Arithmetic exception as the last exception from this method as catch one is
+		
+//		Exception in thread "main" java.lang.ArithmeticException
+//		at uk.warley.ganesh/uk.warley.ganesh.chapter10.exceptions.TryCatchDemo3.example5(TryCatchDemo3.java:74)
+//		at uk.warley.ganesh/uk.warley.ganesh.chapter10.exceptions.TryCatchDemo3.main(TryCatchDemo3.java:7)
 		try {
 			throw new RuntimeException();
 		} catch (Exception e) {

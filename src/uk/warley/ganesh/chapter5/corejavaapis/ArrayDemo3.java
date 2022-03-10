@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ArrayDemo3 {
 	public static void main(String[] args) {
 
-//		example1();
+		example1();
 //		example2();
 //		example3();
 //		example4();
@@ -13,7 +13,7 @@ public class ArrayDemo3 {
 	}
 
 	private static void example1() {
-//		int [] a1=new int[-5];//NegativeArraySizeException
+		int [] a1=new int[-5];//NegativeArraySizeException
 		int[] a2 = new int[0];
 		a2[0] = 0;// ArrayIndexOutOfBoundsException
 		a2[1] = 0;
@@ -62,12 +62,14 @@ public class ArrayDemo3 {
 		float[] a6 = new float[5];
 		for (int i = 0; i < a6.length; i++) {
 			System.out.print(a6[i] + " ");// 0.0 0.0 0.0 0.0 0.0
+//			a6[0]=0.0;//not allowed but still initial value is 0.0
 		}
 
 		System.out.println();
 		double[] a7 = new double[5];
 		for (int i = 0; i < a7.length; i++) {
 			System.out.print(a7[i] + " ");// 0.0 0.0 0.0 0.0 0.0
+
 		}
 
 		System.out.println();

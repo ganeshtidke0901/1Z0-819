@@ -44,6 +44,7 @@ public class EnumExample6 {
 		System.out.println(winter.getHours());//10am-4pm
 		winter.test();//static 
 		Season.test();//static 
+	
 		
 	}
 	
@@ -51,6 +52,10 @@ public class EnumExample6 {
 	
 }
 
+
+enum CCC{
+	
+}
 
 //oho possible
 enum XXY implements Comparator<String>{
