@@ -1,6 +1,8 @@
 package uk.warley.ganesh.chapter14.genericandcollections;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class GenericsMethodsExample19 {
 	public static void main(String[] args) {
@@ -21,13 +23,57 @@ public class GenericsMethodsExample19 {
 
 class Generic4 {
 
-	public static <T> void test(T a) {
+	public static <T extends CharSequence> void test(T a) {
 		System.out.println("generic method:" + a);
 	}
+//	public static <T super CharSequence> void test(T a) {
+//		System.out.println("generic method:" + a);
+//	}
 
 	public <T> void test2(T a) {
 		System.out.println("generic method:" + a);
 	}
 	
+	public <T> void test22(List<T> a) {
+		System.out.println("generic method:" + a);
+	}
 	
+	public <T> void test222(List<? extends T> a) {
+		System.out.println("generic method:" + a);
+	}
+	public <T extends CharSequence> List<T> test2222(List<? extends T> a) {
+		System.out.println("generic method:" + a);
+		return null;
+	}
+	public <T extends Comparator<? super T>> List<T> test2w222(T a) {
+		System.out.println("generic method:" + a);
+		return null;
+	}
+}
+
+class Generic41<T> {// 
+
+	public static <T extends CharSequence> void test(T a) {
+		System.out.println("generic method:" + a);
+	}
+//	public static <T super CharSequence> void test(T a) {
+//		System.out.println("generic method:" + a);
+//	}
+
+	public <T> void test2(T a) {// this T is hiding <T> from Generic41
+		System.out.println("generic method:" + a);
+	}
+	
+	public <T> void test22(List<T> a) {
+		System.out.println("generic method:" + a);
+	}
+	
+	public <T> void test222(List<? extends T> a) {
+		System.out.println("generic method:" + a);
+	}
+	public <T extends CharSequence> List<T> test2222(List<? extends T> a) {
+		System.out.println("generic method:" + a);
+		return null;
+	}
+
 }

@@ -13,7 +13,7 @@ import java.util.function.UnaryOperator;
 public class BuiltInFunctionalInterfaces1 {
 	public static void main(String[] args) {
 
-		Supplier<String> supplier = () -> "Ganesh";
+		Supplier<String> supplier = () -> "Ganesh";//String::new
 		Consumer<String> consumer = s -> System.out.println(s);
 		BiConsumer<String, Integer> biConsumer = (s, i) -> System.out.println(s + i);
 		Predicate<String> predicate = (s) -> s.isEmpty();

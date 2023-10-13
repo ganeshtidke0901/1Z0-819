@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class ConcurrentClassesExample36_1 {
-	Collection<String> copyOnWriteListy1 =  Collections.synchronizedCollection(new ArrayList<String>());
+//	Collection<String> copyOnWriteListy =  Collections.synchronizedCollection(new ArrayList<String>());
 	List<String> copyOnWriteListy = new CopyOnWriteArrayList<>();
 	List<String> list = new ArrayList<>();
 
@@ -33,7 +33,7 @@ public class ConcurrentClassesExample36_1 {
 		};
 
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 1000; i++) {
 			executorService.submit(runnable1);
 		}
 

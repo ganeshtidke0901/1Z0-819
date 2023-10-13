@@ -19,6 +19,9 @@ public class MethodReferenceExample00 {
 		// calling static methods
 		Consumer<List<Integer>> consumer1 = s -> Collections.sort(s);// accept method is accepting list and sorting it
 		Consumer<List<Integer>> consumer2 = Collections::sort;
+		
+		Consumer<String> consumer3 = s-> s.isEmpty();//  this method returns boolean but here it is discarded
+		Consumer<String> consumer4 = String::isEmpty;//  this method returns boolean but here it is discarded
 		consumer1.accept(integers);
 		System.out.println(integers);
 

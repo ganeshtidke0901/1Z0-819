@@ -34,22 +34,26 @@ public class ComparatorExample13 {
 		Collections.sort(list, Comparator.comparingDouble(Squirrel1::getWeight));
 		System.out.println(list);// [1-XYZ, 1-ABC, 2-ABC, 4-PQR, 5-PQR]
 
-		
 		Collections.sort(list,
 				Comparator.comparing(Squirrel1::getSpecies).thenComparing(Comparator.comparing(Squirrel1::getWeight)));
 		System.out.println(list);// [1-ABC, 2-ABC, 4-PQR, 5-PQR, 1-XYZ]
 
-		
-		Collections.sort(list,
-				Comparator.comparing(Squirrel1::getSpecies).thenComparing(Comparator.comparing(Squirrel1::getWeight).reversed()));
-		System.out.println("--"+list);// [2-ABC, 1-ABC, 5-PQR, 4-PQR, 1-XYZ]
+		Collections.sort(list, Comparator.comparing(Squirrel1::getSpecies)
+				.thenComparing(Comparator.comparing(Squirrel1::getWeight).reversed()));
+		System.out.println("--" + list);// [2-ABC, 1-ABC, 5-PQR, 4-PQR, 1-XYZ]
 
-//		Collections.sort(list, Comparator.reverseOrder());//Squirrel needs to implement Comparable(order set by Comparable)
-//		Collections.sort(list, Comparator.naturalOrder());//Squirrel needs to implement Comparable(reverse of order set by Comparable)
+//		Collections.sort(list, Comparator.naturalOrder());//Squirrel needs to implement Comparable(order set by Comparable)
+//		System.out.println("Natural order:"+list);//Natural order:[1-XYZ, 1-ABC, 2-ABC, 4-PQR, 5-PQR]
+//		Collections.sort(list, Comparator.reverseOrder());// Squirrel needs to implement Comparable(reverse of order set by Comparable)
+//		System.out.println("Reverese order:"+list);//Natural order:[1-XYZ, 1-ABC, 2-ABC, 4-PQR, 5-PQR]
+
+
 	}
 }
 
-class Squirrel1 {
+class Squirrel1
+//implements Comparable<Squirrel1> 
+{
 	private int weight;
 	private String species;
 
@@ -70,5 +74,10 @@ class Squirrel1 {
 		this.weight = id;
 		this.species = name;
 	}
+
+//	@Override
+//	public int compareTo(Squirrel1 o) {
+//		return this.weight - o.weight;
+//	}
 
 }

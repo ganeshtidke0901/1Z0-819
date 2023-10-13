@@ -27,12 +27,16 @@ public class OptionalExamples4 {
 			System.out.println(s5);// Ganesh
 		}
 
-		String s1 = optional.get();// java.util.NoSuchElementException: No value present
+//		String s1 = optional.get();// java.util.NoSuchElementException: No value present
 		String s2 = optional.orElse("Tidke");// Tidke
-		String s3 = optional.orElseThrow();// java.util.NoSuchElementException: No value present
-		String s4 = optional.orElseThrow(() -> new RuntimeException("it is empty"));// java.lang.RuntimeException: it is
+//		String s3 = optional.orElseThrow();// java.util.NoSuchElementException: No value present
+//		String s4 = optional.orElseThrow(() -> new RuntimeException("it is empty"));// java.lang.RuntimeException: it is
 																					// empty
 		String s5 = optional.orElseGet(String::new);// Supplier- Empty String
-
+		
+		
+//		Optional<String> optional3=Optional.of(null);//Exception in thread "main" java.lang.NullPointerException
+		Optional<String> optional3=Optional.ofNullable(null);
+		System.out.println(optional3.isPresent());
 	}
 }

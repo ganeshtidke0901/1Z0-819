@@ -12,18 +12,16 @@ public class SortingSearchingExample9 {
 		list.add(new SortRabbits());
 		list.add(new SortRabbits());
 
-		
-		
 //		Collections.sort(list); //compiler error as SortRabbits has to implement Comparable
-		//OR
-		Collections.sort(list, (s1,s2)-> s1.toString().compareTo(s2.toString()));
-		
+		// OR
+		Collections.sort(list, (s1, s2) -> s1.toString().compareTo(s2.toString()));
+
 		List<SortMonkeys> monkeys = new ArrayList<SortMonkeys>();
 		monkeys.add(new SortMonkeys());
 		monkeys.add(new SortMonkeys());
 
 		Collections.sort(monkeys);
-		Collections.sort(monkeys,(s1, s2) -> s1.id - s2.id);
+		Collections.sort(monkeys, (s1, s2) -> s1.id - s2.id);
 
 		var s = Arrays.asList(12, 10, 23, 100);
 
@@ -36,10 +34,13 @@ public class SortingSearchingExample9 {
 		int[] arr = { 12, -1, 25, -8 };
 		Arrays.sort(arr);
 
+		System.out.println();
+		Arrays.stream(arr).forEach(System.out::println);
+		System.out.println();
+
 		SortMonkeys[] arr2 = { new SortMonkeys(), new SortMonkeys() };
 		Arrays.sort(arr2);
 		Arrays.sort(arr2, (s1, s2) -> s1.id - s2.id);
-		
 
 	}
 }

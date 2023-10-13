@@ -3,6 +3,7 @@ package uk.warley.ganesh.chapter15.streams;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamCommonIntermidiateOperations8 {
@@ -13,6 +14,8 @@ public class StreamCommonIntermidiateOperations8 {
 		Stream<String> stream1 = Stream.of("monkey", "bonobo", "bonobo");
 		stream1 = stream1.distinct();
 		stream1.forEach(System.out::println);// gorilla,bonobo
+		
+		
 
 		Stream<Integer> stream2 = Stream.iterate(1, i -> i + 1); // Infinite stream 1,2,3,4,5........
 		stream2.skip(5).limit(2).forEach(System.out::println);// 6

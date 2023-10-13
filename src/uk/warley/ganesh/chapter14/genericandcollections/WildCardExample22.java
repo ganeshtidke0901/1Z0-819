@@ -25,6 +25,9 @@ public class WildCardExample22 {
 		t1=(Consumer<? super String>) t3;
 		t3=(Consumer<? extends String>) t1;
 		
+		t31=t3;
+		t3=(Consumer<? extends String>) t31;
+		
 		Consumer<Object> t4 = s -> System.out.println(s);
 		t1=t4;
 		a.doSomething(t4);

@@ -1,5 +1,7 @@
 package uk.warley.ganesh.chapter15.streams;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -12,7 +14,7 @@ public class StreamCommonTerminalOperations7 {
 
 		Stream<String> stream4 = Stream.iterate("Ganesh", s -> s.length() < 20, i -> i + i);
 		stream4.forEach(System.out::println); // Ganesh
-											  // GaneshGanesh
+												// GaneshGanesh
 
 //		long count = stream4.count();// java.lang.IllegalStateException: stream has already been operated upon or
 //		System.out.println(count);
@@ -21,13 +23,17 @@ public class StreamCommonTerminalOperations7 {
 		long count1 = stream5.count();// 2
 		System.out.println(count1);// 2
 
-		Stream<String> stream6 = Stream.of("Ganesh", "Ashwini", "a","abc");
+		Stream<String> stream6 = Stream.of("Ganesh", "Ashwini", "a", "abc");
 		Optional<String> optional = stream6.min((s1, s2) -> s1.compareTo(s2));// Comparator
-		optional.ifPresent(s->System.out.println("Min "+s));// Min Ashwini
+		optional.ifPresent(s -> System.out.println("Min " + s));// Min Ashwini
 
-		Stream<String> stream7 = Stream.of("Ganesh", "Ashwini", "Tidke","a","abc");
+		Stream<String> stream7 = Stream.of("Ganesh", "Ashwini", "Tidke", "a", "abc");
 		Optional<String> optional1 = stream7.max((s1, s2) -> s1.compareTo(s2));// Comparator
-		optional1.ifPresent(s->System.out.println("Max "+s));// Max abc
+		optional1.ifPresent(s -> System.out.println("Max " + s));// Max abc
+
+		Stream<String> stream71 = Stream.of("Ganesh", "Ashwini", "Tidke", "a", "abc");
+		Optional<String> optional11 = stream71.max(Comparator.comparingInt(String::length));// Comparator
+		optional11.ifPresent(s -> System.out.println("Max " + s));// Max Ashwini
 
 		Stream<String> stream8 = Stream.iterate("Ganesh", s -> s.length() < 20, i -> i + i);
 		Optional<String> optional2 = stream8.max((s1, s2) -> s2.length() - s1.length());// Comparator
@@ -78,9 +84,7 @@ public class StreamCommonTerminalOperations7 {
 
 		List<String> list1 = List.of("w", "o", "l", "f");
 		Integer integer1 = list1.parallelStream().reduce(100, (i, s) -> i + s.length(), (d, e) -> d + e + 1000);// identity,
-		// BiFunction-i=101,101,101,101,
 
-		// Binary Operator 101+101+1000=1202 +101+1000=2303 +101+1000=3404
 		System.out.println(integer1);// 3404 //(d, e) -> d + e+1000 act as combiner when we run parallel stream
 
 		Stream<String> stream19 = Stream.of("w", "o", "l", "f");
@@ -117,5 +121,24 @@ public class StreamCommonTerminalOperations7 {
 		System.out.println(treeset1.toString());// [f, l, o, w]
 		System.out.println(treeset2.getClass());// class java.util.HashSet
 
+		Integer[] aa = { 1, 2, 3, 4 };
+		Set<Integer> dsfd = Arrays.stream(aa).collect(Collectors.toSet());
+
+		int[] aa1 = { 1, 2, 3, 4 };
+		Set<Integer> dsfd1 = Arrays.stream(aa1).mapToObj(s -> s).collect(Collectors.toSet());
+		dsfd1.add(12);
+		System.out.println(dsfd1);
+
+		List<Integer> list22 = Arrays.asList(1, 2, 3, 4);
+//		List<Integer> list22 = Arrays.asList(aa1); does not work as it expectes List<int[]>
+		
+		List<int[]> aa111;
+		Object ss=aa1;
+		Object ss0=aa;
+		Object[] ss1=aa;
+//		Object[] ss2=aa1;
+
+		System.out.println(ss1.length);//4
+		System.out.println(ss0);//[Ljava.lang.Integer;@13a57a3b
 	}
 }

@@ -35,7 +35,6 @@ public class MethodReferenceExample2 {
 	public static void xyz() {
 
 	}
-
 	public static void main(String[] args) {
 
 		Interface1 interface1 = (a, b) -> xyz();

@@ -1,6 +1,7 @@
 package uk.warley.ganesh.chapter15.streams;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,7 @@ public class AdvancedStreamPipelinesCollectingResult15 {
 																				// return is not cosidered
 		BiFunction<TreeSet<String>, String, Boolean> biFunction2 = (t, s) -> t.add(s);// here apply return- t.add(s) is
 																						// considered
+		BiFunction<TreeSet<String>, String, Boolean> biFunction3 = TreeSet::add;
 	}
 
 	private static void example3() {
@@ -50,9 +52,15 @@ public class AdvancedStreamPipelinesCollectingResult15 {
 		long count = stream2.collect(Collectors.counting());
 		System.out.println(count);// 3
 
+//		----------------
 		Stream<String> stream3 = Stream.of("G", "T", "I");
 		Optional<String> optional = stream3.collect(Collectors.maxBy((a, b) -> a.compareTo(b)));
 		optional.ifPresent(System.out::println);// "T"
+		
+		Stream<String> stream31 = Stream.of("G", "T", "I");
+		Optional<String> optional31 = stream31.max(Comparator.naturalOrder());
+		optional31.ifPresent(System.out::println);// "T"
+//		----------------
 
 		Stream<String> stream4 = Stream.of("G", "T", "I");
 		Optional<String> optional1 = stream4.collect(Collectors.minBy((a, b) -> a.compareTo(b)));
@@ -127,7 +135,7 @@ public class AdvancedStreamPipelinesCollectingResult15 {
 		System.out.println(map17);// {5=2, 6=1}
 
 		Stream<String> stream18 = Stream.of("Tidke", "ABCDE", "Ganesh");
-		Map<Integer,Optional<Character>> map18=stream18.collect(Collectors.groupingBy(s -> s.length(),HashMap::new,Collectors.mapping(s1->s1.charAt(0),Collectors.minBy((a,b)->a-b))));
+		HashMap<Integer,Optional<Character>> map18=stream18.collect(Collectors.groupingBy(s -> s.length(),HashMap::new,Collectors.mapping(s1->s1.charAt(0),Collectors.minBy((a,b)->a-b))));
 		System.out.println(map18);// {5=Optional[A], 6=Optional[G]}
 
 	}

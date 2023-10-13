@@ -47,12 +47,12 @@ public class MapMethodsExample8 {
 		map.entrySet().forEach(s -> System.out.println(s.getKey() + ":" + s.getValue()));
 		System.out.println(map);// {1=101, 2=2002}
 
-		BiFunction<Integer, Integer, Integer> biFunction = (p, q) -> p + q;
+		BiFunction<Integer, Integer, Integer> biFunction = (v1, v2) -> v1 + v2;
 		map.merge(1, 50, biFunction);
 		map.merge(3, 50, biFunction);
 		System.out.println(map);// {1=151, 2=2002, 3=50}
 
-		BiFunction<Integer, Integer, Integer> biFunction1 = (p, q) -> null;
+		BiFunction<Integer, Integer, Integer> biFunction1 =(v1, v2) -> null;
 		map.merge(3, 50, biFunction1);// key-value is removed
 		System.out.println(map);// {1=151, 2=2002}
 

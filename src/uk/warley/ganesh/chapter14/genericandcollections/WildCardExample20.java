@@ -15,13 +15,23 @@ public class WildCardExample20 {
 		List<?> list3 = new ArrayList<String>();
 //		list3.add("Ganesh");// not allowed as we dont know which data type to go into
 
+		List<A> aa=null;
+		List<B> bb=null;
+		List<C>cc=null;
 		// Upper bounded wildcard
 		List<? extends A> list4 = new ArrayList<A>();
 		List<? extends A> list5 = new ArrayList<B>();
 		List<? extends A> list6 = new ArrayList<C>();
-//		list4.add(new A());// not allowed as <? extend A> can take A,B, C
-//		list4.add(new C());// not allowed as <? extend A> can take A,B, C
+		List<? extends A> list41 = aa;
+		List<? extends A> list51 =bb;
+		List<? extends A> list61 = cc;
+		aa=(List<A>) list4;
+		
+//		list4.add(new A());// not allowed as List<? extend A> can take new ArrayList<C>(); 
+//		list4.add(new C());// not allowed as <? extend A> can take child of C
 //		A a = list4.get(0);
+		
+//		list41.add(new A()); //not allowed as List<? extend A> can take List<C>; 
 
 		// Lower bounded wildcard
 		List<? super A> list7 = new ArrayList<A>();
@@ -30,6 +40,8 @@ public class WildCardExample20 {
 		list7.add(new A());
 		list7.add(new B());
 		list7.add(new C());
+//		list7.add(new Object()); //does not allow where list7 can points to new ArrayList<A>();
+		System.out.println("list7:"+list7.remove(new Object()));//false 
 
 //		list7.add(new Object());// not allowed as <? super A> can take A
 		Object object = list7.get(0);

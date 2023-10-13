@@ -7,22 +7,22 @@ import java.util.List;
 
 public class ComparatorExample14 {
 	public static void main(String[] args) {
-		List<Platypus> list = Arrays.asList(new Platypus("Paula", 3), new Platypus("Peter", 5),
-				new Platypus("Peter", 7));
+		List<Platypus> list = Arrays.asList(new Platypus("Paula", 3), new Platypus("Peter", 7),
+				new Platypus("Peter", 5),new Platypus("XYZ", 0));
 
 		Collections.sort(list, Comparator.comparing(Platypus::getBeakLength).reversed());
-		System.out.println(list);//[7, 5, 3]
+		System.out.println(list);//[7, 5, 3, 0]
 		
 		Collections.sort(list, Comparator.comparing(Platypus::getName).thenComparingInt(Platypus::getBeakLength));
-		System.out.println(list);//[3, 5, 7]
+		System.out.println(list);//[3, 5, 7, 0]
 
 		
 		Collections.sort(list, Comparator.comparing(Platypus::getName).thenComparingInt(Platypus::getBeakLength).reversed());
-		System.out.println(list);//[7, 5, 3]
-		
-		
+		System.out.println(list);//[0, 7, 5, 3]
+//		
+//		
 		Collections.sort(list, Comparator.comparing(Platypus::getName).thenComparing(Comparator.comparing(Platypus::getBeakLength).reversed()));
-		System.out.println(list);//[3, 7, 5]
+		System.out.println(list);//[3, 7, 5, 0]
 		
 
 	}

@@ -104,7 +104,7 @@ public class ParallelStreamWithReduceExample44 {
 		
 		Stream<String> ohMy1=Stream.of("lions","tigers","bears").parallel();
 		ConcurrentMap<Integer, List<String>> map1 =ohMy1.collect(Collectors.groupingByConcurrent(s->s.length()));
-		System.out.println(map1);//{5=lions-bears, 6=tigers}
+		System.out.println(map1);//{5=[bears, lions], 6=[tigers]}
 		
 		
 		
